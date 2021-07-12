@@ -721,8 +721,9 @@ function fakebits() {
 // fake channel points testing
 function fakepoints() {
   const i_name = fakename();
+  const title = ichannelpoints.value || 'Test Redeem';
   const message = nchannelpointsmsg.value.replace(/"/g, "'") || 'Testing Message';
-  i_str = `{"type":"MESSAGE","data":{"topic":"channel-points-channel-v1.23071698","message":"{\\"type\\":\\"reward-redeemed\\",\\"data\\":{\\"timestamp\\":\\"2020-05-10T02:42:01.699693419Z\\",\\"redemption\\":{\\"id\\":\\"f2418f14-1e2b-41f3-90e5-fcad7ab2c701\\",\\"user\\":{\\"id\\":\\"23071698\\",\\"login\\":\\"${i_name.toLowerCase()}\\",\\"display_name\\":\\"${i_name}\\"},\\"channel_id\\":\\"23071698\\",\\"redeemed_at\\":\\"2020-05-10T02:42:01.674616194Z\\",\\"reward\\":{\\"id\\":\\"46b39721-ce2b-4670-8b2d-b520762a3f1e\\",\\"channel_id\\":\\"23071698\\",\\"title\\":\\"${ichannelpoints.value}\\",\\"prompt\\":\\"Testing Message\\",\\"cost\\":1,\\"is_user_input_required\\":${nchannelpointinput.checked},\\"is_sub_only\\":false,\\"image\\":{\\"url_1x\\":\\"https://static-cdn.jtvnw.net/custom-reward-images/23071698/46b39721-ce2b-4670-8b2d-b520762a3f1e/d50acf1d-4a0c-4dd0-8596-e5ca0c386332/custom-1.png\\",\\"url_2x\\":\\"https://static-cdn.jtvnw.net/custom-reward-images/23071698/46b39721-ce2b-4670-8b2d-b520762a3f1e/d50acf1d-4a0c-4dd0-8596-e5ca0c386332/custom-2.png\\",\\"url_4x\\":\\"https://static-cdn.jtvnw.net/custom-reward-images/23071698/46b39721-ce2b-4670-8b2d-b520762a3f1e/d50acf1d-4a0c-4dd0-8596-e5ca0c386332/custom-4.png\\"},\\"default_image\\":{\\"url_1x\\":\\"https://static-cdn.jtvnw.net/custom-reward-images/default-1.png\\",\\"url_2x\\":\\"https://static-cdn.jtvnw.net/custom-reward-images/default-2.png\\",\\"url_4x\\":\\"https://static-cdn.jtvnw.net/custom-reward-images/default-4.png\\"},\\"background_color\\":\\"#00C7AC\\",\\"is_enabled\\":true,\\"is_paused\\":false,\\"is_in_stock\\":true,\\"max_per_stream\\":{\\"is_enabled\\":false,\\"max_per_stream\\":100},\\"should_redemptions_skip_request_queue\\":true,\\"template_id\\":null,\\"updated_for_indicator_at\\":\\"2020-02-12T18:00:03.401562134Z\\"},\\"user_input\\":\\"${message}\\",\\"status\\":\\"FULFILLED\\"}}}"}}`;
+  i_str = `{"type":"MESSAGE","data":{"topic":"channel-points-channel-v1.23071698","message":"{\\"type\\":\\"reward-redeemed\\",\\"data\\":{\\"timestamp\\":\\"2020-05-10T02:42:01.699693419Z\\",\\"redemption\\":{\\"id\\":\\"f2418f14-1e2b-41f3-90e5-fcad7ab2c701\\",\\"user\\":{\\"id\\":\\"23071698\\",\\"login\\":\\"${i_name.toLowerCase()}\\",\\"display_name\\":\\"${i_name}\\"},\\"channel_id\\":\\"23071698\\",\\"redeemed_at\\":\\"2020-05-10T02:42:01.674616194Z\\",\\"reward\\":{\\"id\\":\\"46b39721-ce2b-4670-8b2d-b520762a3f1e\\",\\"channel_id\\":\\"23071698\\",\\"title\\":\\"${title}\\",\\"prompt\\":\\"Testing Message\\",\\"cost\\":1,\\"is_user_input_required\\":${nchannelpointinput.checked},\\"is_sub_only\\":false,\\"image\\":{\\"url_1x\\":\\"https://static-cdn.jtvnw.net/custom-reward-images/23071698/46b39721-ce2b-4670-8b2d-b520762a3f1e/d50acf1d-4a0c-4dd0-8596-e5ca0c386332/custom-1.png\\",\\"url_2x\\":\\"https://static-cdn.jtvnw.net/custom-reward-images/23071698/46b39721-ce2b-4670-8b2d-b520762a3f1e/d50acf1d-4a0c-4dd0-8596-e5ca0c386332/custom-2.png\\",\\"url_4x\\":\\"https://static-cdn.jtvnw.net/custom-reward-images/23071698/46b39721-ce2b-4670-8b2d-b520762a3f1e/d50acf1d-4a0c-4dd0-8596-e5ca0c386332/custom-4.png\\"},\\"default_image\\":{\\"url_1x\\":\\"https://static-cdn.jtvnw.net/custom-reward-images/default-1.png\\",\\"url_2x\\":\\"https://static-cdn.jtvnw.net/custom-reward-images/default-2.png\\",\\"url_4x\\":\\"https://static-cdn.jtvnw.net/custom-reward-images/default-4.png\\"},\\"background_color\\":\\"#00C7AC\\",\\"is_enabled\\":true,\\"is_paused\\":false,\\"is_in_stock\\":true,\\"max_per_stream\\":{\\"is_enabled\\":false,\\"max_per_stream\\":100},\\"should_redemptions_skip_request_queue\\":true,\\"template_id\\":null,\\"updated_for_indicator_at\\":\\"2020-02-12T18:00:03.401562134Z\\"},\\"user_input\\":\\"${message}\\",\\"status\\":\\"FULFILLED\\"}}}"}}`;
   console.log(`Fake Test Channel Points Redeem "${ichannelpoints.value}" sent.`); lioranboardclient.send(i_str);
 }
 
@@ -1149,8 +1150,6 @@ function connecttwitchchat() {
             // get user name
             i_pos = i_real_name.indexOf('!');
             i_real_name = i_real_name.slice(0, i_pos);
-
-            console.log(user_id);
 
             const i_obj = {
               emotes: i_emote,
@@ -1635,7 +1634,6 @@ function DebugSentPacketsLB() {
     this.send = function (data) {
       this._send(data);
       LBDebugPost('receiverSent', data);
-      console.log(`<< ${data}`);
     };
   };
 }

@@ -40,7 +40,6 @@ function DebugSentPacketsLB() {
     this.send = function (data) {
       this._send(data);
       LBDebugPost('receiverSent', data);
-      console.log(`<< ${data}`);
     };
   };
 }

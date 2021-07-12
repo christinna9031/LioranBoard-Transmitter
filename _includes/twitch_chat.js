@@ -193,8 +193,6 @@ function connecttwitchchat() {
             i_pos = i_real_name.indexOf('!');
             i_real_name = i_real_name.slice(0, i_pos);
 
-            console.log(user_id);
-
             const i_obj = {
               emotes: i_emote,
               login: i_real_name,
