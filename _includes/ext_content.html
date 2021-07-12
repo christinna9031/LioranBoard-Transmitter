@@ -1,0 +1,227 @@
+<!--Twitch Triggers external-->
+<div class="tab-pane" id="content-basic" role="tabpanel" title="Twitch Triggers" data-type="default">
+  <button type="button" onclick="fakesub2()">Test Sub</button>
+  <a class="tslCollapse collapsed" data-bs-toggle="collapse" href="#hidesubs" role="button" aria-expanded="false" aria-controls="hidesubs"></a>  
+  <div class="collapse" id="hidesubs"> 
+     <input type="radio" id="itier1" name="tier" value="vtier1" checked>
+     Tier 1
+     <input type="radio" id="itier2" name="tier" value="vtier2">
+     Tier 2
+     <input type="radio" id="itier3" name="tier" value="vtier3" >
+     Tier 3
+     <input type="radio" id="iprime" name="tier" value="vprime" onclick="CheckUncheckSubGift(this)" >
+     Prime <br>
+     <input type="checkbox" id="isubgift" name="subgift" value="vsubgift" onclick="CheckUncheckSubGift(this)">
+     SubGift
+     <input type="checkbox" id="ianongift" name="subgift" value="vanongift" onclick="CheckUncheckSubGift(this)">
+     AnonGift 
+     <input type="number" min="0" max="100" id="nsubmonths" name="nsubmonths" value=1> Months <br>
+     Message:	
+     <input type="text" id="nsubmessage" name="nsubmessage" size="20" value='Hello World!'>
+  </div>
+  <div>
+     <button type="button" onclick="fakegiftamount()">Test Subs Gift Amount</button>
+     Amount:
+     <input type="number" min="0" max="999" id="igiftamount" name="ngiftamount" value=1> 
+  </div>
+  <button type="button" onclick="fakebits()">Test Bits</button>
+  <a class="tslCollapse collapsed" data-bs-toggle="collapse" href="#hidebits" role="button" aria-expanded="false" aria-controls="hidebits"></a>
+  <div class='collapse' id="hidebits"> 
+     Amount of bits:
+     <input type="number" min="0" max="999" id="ibitsamount" name="nbitsamount"  value=1>
+     Total bits: 	
+     <input type="number" min="0" max="999" id="ibitstotal" name="ibitstotal" value=1000><br/>
+     Message:	
+     <input type="text" id="ibitsmessage" name="ibitsmessage" size="20" style="margin:5px 0px;" value='Hello World!'>
+  </div>
+  <div><button type="button" onclick="fakepoints()">Test Channel Points</button> 
+     <a class="tslCollapse collapsed" data-bs-toggle="collapse" href="#hidepoints" role="button" aria-expanded="false" aria-controls="hidebits"></a>
+  </div>
+  <div class="collapse" id="hidepoints" >
+     Redeem Name:
+     <input type="text" id="ichannelpoints" name="nchannelpoints" size="10" style="margin:5px 0px">	<input type="checkbox" id="nchannelpointinput" name="nchannelpointinput" > User Input Required <br>
+     Redeem Message:	
+     <input type="text" id="nchannelpointsmsg" name="nchannelpointsmsg" size="20"  >	
+  </div>
+  <div><button type="button" onclick="fakeraid()">Test Raid</button>
+     Amount:
+     <input type="number" min="0" max="999" id="iraidamount" name="nraidamount"  value=1> 
+  </div>
+  <div><button type="button" onclick="fakehost()">Test Host</button>
+     Amount:
+     <input type="number" min="0" max="999" id="ihostamount" name="nhostamount"  value=1>
+  </div>
+  <div><button type="button" onclick="fakechatmsg()">Test Chat Message </button> 	
+     <a class="tslCollapse collapsed" data-bs-toggle="collapse" href="#hidechatmsg" role="button" aria-expanded="false" aria-controls="hidechatmsg"></a>
+  </div>
+  <div class="collapse" id="hidechatmsg">
+     Username: <input type="text" id="ichatname" size="10" value="Lioran"> <br> Message: <input type="text" id="ichatmsg" size="20" style="margin:5px 0px"; value="Hello World">	<br>
+     <input type="checkbox" id="ichatbroadcaster"> Broadcaster <input type="checkbox" id="ichatmod"> Mod <input type="checkbox" id="ichatsub"> Subscriber <input type="checkbox" id="ichatvip"> VIP <br>
+     Subscriber Tier: 
+     <select id="chatmsgsubtier">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+     </select>
+     Month:  <input type="number" min=0 max=12 maxlength="2" oninput="javascript: if (parseInt(this.value) > parseInt(this.max)) this.value = this.max;" id="chatmsgsubmonth" value=1>
+  </div>
+</div>
+<!--Twitch Triggers external end-->
+<div class="tab-pane" id="content-status" role="tabpanel" title="Status" data-type="default">
+<!--Get Version external-->
+  <div class='row ml-5 pl-5'>
+     <style>
+        #version_output a{
+        color: #fb4848;
+        }
+        #version_output td{
+        padding:0px 10px;
+        }
+     </style>
+     <h5>Version</h5>
+     <table  class="table ms-2 table-responsive table-Dark table-striped w-auto align-middle" id='version_output'>
+        <thead>
+           <tr>
+              <th scope="col">Name</th>
+              <th scope="col">Latest</th>
+              <th scope="col">Current</th>
+              <th scope="col">Status</th>
+           </tr>
+        </thead>
+        <tbody>
+           <tr>
+              <th scope="row" id='versionOBS'></th>
+              <td id='obs_latestV'></td>
+              <td id='obs_currentV'></td>
+              <td id='obs_status'></td>
+           </tr>
+           <tr>
+              <th scope="row" id='versionOBSWS'></th>
+              <td id='obsws_latestV'></td>
+              <td id='obsws_currentV'></td>
+              <td id='obsws_status'></td>
+           </tr>
+           <tr>
+              <th scope="row" id='versionReceiver'></th>
+              <td id='receiver_latestV'></td>
+              <td id='receiver_currentV'></td>
+              <td id='receiver_status'></td>
+           </tr>
+           <tr>
+              <th scope="row" id='versionStreamDeck'></th>
+              <td id='streamdeck_latestV'></td>
+              <td id='streamdeck_currentV'></td>
+              <td id='streamdeck_status'></td>
+           </tr>
+           <tr>
+              <th scope="row" id='versionTransmitter'></th>
+              <td id='transmitter_latestV'></td>
+              <td id='transmitter_currentV'></td>
+              <td id='transmitter_status'></td>
+           </tr>
+        </tbody>
+     </table>
+  </div>
+  <div class='row pt-2'> <span><button onclick='LBGetVersion()'>Refresh</button> </span> </div>
+<!--Get Version external end-->
+  <div class='row pt-3'>
+     <h5>Appearance</h5>
+     <div class="col col-md-auto"><button type="button" onclick="TSLNoTabs()">No Tabs</button><button type="button" onclick="TSLTabs()">Show Tabs</button></div>
+  </div>
+<!--Message Logging external-->
+  <div class='row pt-3 d-block'>
+     <h5>Message Logging</h5>
+     <div class='pl-5 ml-5'>
+        <div class="form-check form-switch">
+           <input class="form-check-input" type="checkbox" id="dbgReceiver" onclick="LBDebugLog(this)" >
+           <label class="form-check-label"for="flexSwitchCheckDefault">Receiver</label>
+        </div>
+        <div class="form-check form-switch">
+           <input class="form-check-input" type="checkbox" id="dbgPubsub" onclick="LBDebugLog(this)">
+           <label class="form-check-label" for="flexSwitchCheckDefault">PubSub</label>
+        </div>
+        <div class="form-check form-switch">
+           <input class="form-check-input" type="checkbox" id="dbgChat" onclick="LBDebugLog(this)">
+           <label class="form-check-label" for="flexSwitchCheckDefault">Twitch Chat</label>
+        </div>
+        <ul class="nav nav-tabs mt-3" id="debugLog" role="tablist">
+           <li class="nav-item" role="presentation">
+              <button class="nav-link active" id="LBreceiver-tab" data-bs-toggle="tab" data-bs-target="#LBreceiver" type="button" role="tab" aria-controls="LBreceiver" aria-selected="true">Receiver</button>
+           </li>
+           <li class="nav-item" role="presentation">
+              <button class="nav-link" id="LBPubSub-tab" data-bs-toggle="tab" data-bs-target="#LBPubSub" type="button" role="tab" aria-controls="LBPubSub" aria-selected="false">PubSub</button>
+           </li>
+           <li class="nav-item" role="presentation">
+              <button class="nav-link" id="LBChat-tab" data-bs-toggle="tab" data-bs-target="#LBChat" type="button" role="tab" aria-controls="LBChat" aria-selected="false">Chat</button>
+           </li>
+        </ul>
+        <div class="tab-content p-0 " id="debugLogContent">
+           <!--LB Receiver Log-->
+           <div class="tab-pane fade show active" id="LBreceiver" role="tabpanel" aria-labelledby="LBreceiver-tab" >
+              <div id="LBreceiverlog" class="col col-10 text-wrap">Logging is disabled.</div>
+           </div>
+           <!--LB Pubsub Log-->
+           <div class="tab-pane fade" id="LBPubSub" role="tabpanel" aria-labelledby="LBPubSub-tab">
+              <div id="LBpubsublog" class="col col-10 text-wrap">Logging is disabled.</div>
+           </div>
+           <!--LB Chat Log-->
+           <div class="tab-pane fade" id="LBChat" role="tabpanel" aria-labelledby="LBChat-tab">
+              <div id="LBchatlog" class="col col-10 text-wrap">Logging is disabled.</div>
+           </div>
+        </div>
+     </div>
+  </div>
+<!--Message Logging external end-->
+</div>
+<!--Follower Alert external-->
+<div id="content-Follower_Alert" class="tab-pane" title="Follower Alert" data-type="default">
+  <div>Follower Alert extension is installed.</div>
+  <button type="button" onclick="fakefollow()">Test Follower Trigger</button>
+</div>
+<!--Follower Alert external end-->
+<!--Change Stream external-->
+<div class="tab-pane" id="content-Change_Twitch_Status" role="tabpanel" title="Change Twitch Status" data-type="default">
+  <div>
+     <p>Change Stream extension is installed</p>
+  </div>
+</div>
+<!--Change Stream external end-->
+<!--Viewer Count external-->
+<div class="tab-pane" id="content-Viewer_Count" role="tabpanel" title="Viewer Count" data-type="default">
+  <div>
+     <p>Get Viewer Count extension is installed</p>
+  </div>
+</div>
+<!--Viewer Count external end-->
+<!--Subscriber Count external-->
+<div id="content-Subscriber_Count" class="tab-pane" title="Subscriber Count" data-type="default">
+  <div>
+     <p>Get Subscriber Count extension is installed</p>
+  </div>
+</div>
+<!--Subscriber Count external end-->
+<!--Get Channel ID external-->
+<div id="content-Get_Channel_ID" class="tab-pane" title="Get Channel ID" data-type="default">
+  <div>
+     <p>Get Channel ID extension is installed</p>
+  </div>
+</div>
+<!--Get Channel ID external end-->
+<!--Bits Leaderboard external-->
+<div id="content-Bits_Leaderboard" class="tab-pane" title="Bits Leaderboard" data-type="default">
+  <div>
+     <p>Bits Leaderboard extension is installed.</p>
+  </div>
+</div>
+<!--Bits Leaderboard external end-->
+<!--Get Profile Picture external-->
+<div id="content-Get_Profile_Picture" class="tab-pane" title="Get Profile Picture" data-type="default">
+  <div>
+     <p>Get user profile picture extension is installed.</p>
+  </div>
+</div>
+<!--Get Profile Picture external end-->
+<!--Your external script will be inserted here-->
+<!--<script src="example.js"></script>-->
+<!--INSERT PART 1-->
+ 
