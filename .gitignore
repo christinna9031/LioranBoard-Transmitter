@@ -3,4 +3,5 @@
 .jekyll-metadata
 assets
 _site/favicon.ico
+_site/README.md
 vendor
