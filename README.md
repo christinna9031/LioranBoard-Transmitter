@@ -1,7 +1,7 @@
 # LB-Transmitter
  Current version of Transmitter. Download the latest release. 
 
-## Changelog since 4.00 version
+## Change Log since the initial 4.00 version
 - changed `window.onload = (event)` to `window.addEventListener('load', (event)` for loading UI
 - fixed a bug where Receiver would crash when sending fake chat trigger and adding it to queue
 - added Longhouse81's commit to get a variable or stack from LB without hook
