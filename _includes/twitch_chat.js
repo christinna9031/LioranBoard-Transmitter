@@ -23,7 +23,7 @@ function connecttwitchchat() {
   };
   TwitchChatConnect.onmessage = function (event) {
     if (LBDebugPost) LBDebugPost('chatReceive', event.data);
-    let i_data; let i_type; let i_real_name; let i_channel; let user_id
+    let i_data; let i_type; let i_real_name; let i_channel; let user_id;
     let { data } = event;
     const i_count = (data.match(/\r\n/g) || []).length;
     for (let i = 0; i < i_count; i++) {
@@ -193,13 +193,13 @@ function connecttwitchchat() {
             i_pos = i_real_name.indexOf('!');
             i_real_name = i_real_name.slice(0, i_pos);
 
-            console.log(user_id)
+            console.log(user_id);
 
             const i_obj = {
               emotes: i_emote,
               login: i_real_name,
               display_name: i_name,
-              user_id: user_id,
+              user_id,
               color: i_color,
               badge: i_badge,
               message: i_str,

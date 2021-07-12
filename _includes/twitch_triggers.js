@@ -76,23 +76,23 @@ function fakechatmsg() {
   const name = ichatname.value || fakename();
   const msg = ichatmsg.value.replace(/"/g, "'") || 'This is a test message.';
   const badge = [];
-  const user_id = "123456789"
+  const user_id = '123456789';
   if (ichatbroadcaster.checked) { badge.push('broadcaster/1'); }
   if (ichatmod.checked) { badge.push('moderator/1'); }
   if (ichatvip.checked) { badge.push('vip/1'); }
   if (ichatsub.checked) {
     const tier = parseInt(chatmsgsubtier.value);
     let month = (chatmsgsubmonth.value != 1) ? parseInt(chatmsgsubmonth.value) : 0;
-    month = (month > 3 && month < 6) ? month = 3 : (month > 6 && month < 9) ? month = 6 : (month > 9 && month < 12) ? month = 9 : month
+    month = (month > 3 && month < 6) ? month = 3 : (month > 6 && month < 9) ? month = 6 : (month > 9 && month < 12) ? month = 9 : month;
     const subBadge = (tier === 1) ? `subscriber/${month}` : (tier === 2) ? `subscriber/${2000 + month}` : `subscriber/${3000 + month}`;
     badge.push(subBadge);
   }
   const chat_obj = {
-    emotes: "304822798:0-9/304682444:11-19",
+    emotes: '304822798:0-9/304682444:11-19',
     login: name.toLowerCase(),
     display_name: name,
     user_id,
-    color: "#189A8D",
+    color: '#189A8D',
     badge: badge.join(),
     message: msg,
     channel: name,

@@ -735,23 +735,23 @@ function fakechatmsg() {
   const name = ichatname.value || fakename();
   const msg = ichatmsg.value.replace(/"/g, "'") || 'This is a test message.';
   const badge = [];
-  const user_id = "123456789"
+  const user_id = '123456789';
   if (ichatbroadcaster.checked) { badge.push('broadcaster/1'); }
   if (ichatmod.checked) { badge.push('moderator/1'); }
   if (ichatvip.checked) { badge.push('vip/1'); }
   if (ichatsub.checked) {
     const tier = parseInt(chatmsgsubtier.value);
     let month = (chatmsgsubmonth.value != 1) ? parseInt(chatmsgsubmonth.value) : 0;
-    month = (month > 3 && month < 6) ? month = 3 : (month > 6 && month < 9) ? month = 6 : (month > 9 && month < 12) ? month = 9 : month
+    month = (month > 3 && month < 6) ? month = 3 : (month > 6 && month < 9) ? month = 6 : (month > 9 && month < 12) ? month = 9 : month;
     const subBadge = (tier === 1) ? `subscriber/${month}` : (tier === 2) ? `subscriber/${2000 + month}` : `subscriber/${3000 + month}`;
     badge.push(subBadge);
   }
   const chat_obj = {
-    emotes: "304822798:0-9/304682444:11-19",
+    emotes: '304822798:0-9/304682444:11-19',
     login: name.toLowerCase(),
     display_name: name,
     user_id,
-    color: "#189A8D",
+    color: '#189A8D',
     badge: badge.join(),
     message: msg,
     channel: name,
@@ -881,26 +881,27 @@ function boardmessage(event) {
 }
 // call Twitch api to get user token and info
 function apiconnect(api_request) {
-    // get information about OAuth token
-    (function getAuthToken() {
-      const url = 'https://id.twitch.tv/oauth2/validate';
-      const headers = {
-        Authorization: `OAuth ${api_request}`,
-      };
-      fetchRequest(url, headers)
-        .then((res) => lioranboardclient.send(`tokeninfo:${JSON.stringify(res)}`))
-        .catch((e) => LBAlert(`Twitch Oauth2 Validate Error: ${e}`));
-    }())(function getUserInfo() {
-      const url = 'https://api.twitch.tv/helix/users';
-      const headers = {
-        Authorization: `Bearer ${api_request}`,
-        'Client-ID': TWITCH_CLIENT_ID,
-      };
-      fetchRequest(url, headers, null, 'PUT')
-        .then((res) => lioranboardclient.send(`userinfo:${JSON.stringify(res)}`))
-        .catch((e) => LBAlert(`Twitch Getting User Info Error: ${e}`));
-    }());
-  }
+  // get information about OAuth token
+  (function getAuthToken() {
+    const url = 'https://id.twitch.tv/oauth2/validate';
+    const headers = {
+      Authorization: `OAuth ${api_request}`,
+    };
+    fetchRequest(url, headers)
+      .then((res) => lioranboardclient.send(`tokeninfo:${JSON.stringify(res)}`))
+      .catch((e) => LBAlert(`Twitch Oauth2 Validate Error: ${e}`));
+  }())(function getUserInfo() {
+    const url = 'https://api.twitch.tv/helix/users';
+    const headers = {
+      Authorization: `Bearer ${api_request}`,
+      'Client-ID': TWITCH_CLIENT_ID,
+    };
+    fetchRequest(url, headers, null, 'PUT')
+      .then((res) => lioranboardclient.send(`userinfo:${JSON.stringify(res)}`))
+      .catch((e) => LBAlert(`Twitch Getting User Info Error: ${e}`));
+  }());
+}
+
 /// PubSub connection
 // connect to Twitch pubsub
 function connectserver() {
@@ -979,7 +980,7 @@ function connecttwitchchat() {
   };
   TwitchChatConnect.onmessage = function (event) {
     if (LBDebugPost) LBDebugPost('chatReceive', event.data);
-    let i_data; let i_type; let i_real_name; let i_channel; let user_id
+    let i_data; let i_type; let i_real_name; let i_channel; let user_id;
     let { data } = event;
     const i_count = (data.match(/\r\n/g) || []).length;
     for (let i = 0; i < i_count; i++) {
@@ -1149,13 +1150,13 @@ function connecttwitchchat() {
             i_pos = i_real_name.indexOf('!');
             i_real_name = i_real_name.slice(0, i_pos);
 
-            console.log(user_id)
+            console.log(user_id);
 
             const i_obj = {
               emotes: i_emote,
               login: i_real_name,
               display_name: i_name,
-              user_id: user_id,
+              user_id,
               color: i_color,
               badge: i_badge,
               message: i_str,
@@ -1203,6 +1204,7 @@ function IRCdataparse(str, parse) {
   }
   return str;
 }
+
 /// LB helper functions
 
 // construct extension command object
