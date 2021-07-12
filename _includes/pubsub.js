@@ -1,3 +1,4 @@
+/// PubSub connection
 // connect to Twitch pubsub
 function connectserver() {
   pubsubserver = (new WebSocket('wss://pubsub-edge.twitch.tv'));
@@ -49,3 +50,4 @@ function servermessage(event) {
     // console.log("Message received from PubSub is not a string")
   }
 }
+/// PubSub connection end

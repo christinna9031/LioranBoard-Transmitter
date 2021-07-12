@@ -1,0 +1,69 @@
+<!--Twitch Triggers external-->
+<div class="tab-pane" id="content-basic" role="tabpanel" title="Twitch Triggers" data-type="default">
+    <button type="button" onclick="fakesub2()">Test Sub</button>
+    <a class="tslCollapse collapsed" data-bs-toggle="collapse" href="#hidesubs" role="button" aria-expanded="false" aria-controls="hidesubs"></a>  
+    <div class="collapse" id="hidesubs"> 
+       <input type="radio" id="itier1" name="tier" value="vtier1" checked>
+       Tier 1
+       <input type="radio" id="itier2" name="tier" value="vtier2">
+       Tier 2
+       <input type="radio" id="itier3" name="tier" value="vtier3" >
+       Tier 3
+       <input type="radio" id="iprime" name="tier" value="vprime" onclick="CheckUncheckSubGift(this)" >
+       Prime <br>
+       <input type="checkbox" id="isubgift" name="subgift" value="vsubgift" onclick="CheckUncheckSubGift(this)">
+       SubGift
+       <input type="checkbox" id="ianongift" name="subgift" value="vanongift" onclick="CheckUncheckSubGift(this)">
+       AnonGift 
+       <input type="number" min="0" max="100" id="nsubmonths" name="nsubmonths" value=1> Months <br>
+       Message:	
+       <input type="text" id="nsubmessage" name="nsubmessage" size="20" value='Hello World!'>
+    </div>
+    <div>
+       <button type="button" onclick="fakegiftamount()">Test Subs Gift Amount</button>
+       Amount:
+       <input type="number" min="0" max="999" id="igiftamount" name="ngiftamount" value=1> 
+    </div>
+    <button type="button" onclick="fakebits()">Test Bits</button>
+    <a class="tslCollapse collapsed" data-bs-toggle="collapse" href="#hidebits" role="button" aria-expanded="false" aria-controls="hidebits"></a>
+    <div class='collapse' id="hidebits"> 
+       Amount of bits:
+       <input type="number" min="0" max="999" id="ibitsamount" name="nbitsamount"  value=1>
+       Total bits: 	
+       <input type="number" min="0" max="999" id="ibitstotal" name="ibitstotal" value=1000><br/>
+       Message:	
+       <input type="text" id="ibitsmessage" name="ibitsmessage" size="20" style="margin:5px 0px;" value='Hello World!'>
+    </div>
+    <div><button type="button" onclick="fakepoints()">Test Channel Points</button> 
+       <a class="tslCollapse collapsed" data-bs-toggle="collapse" href="#hidepoints" role="button" aria-expanded="false" aria-controls="hidebits"></a>
+    </div>
+    <div class="collapse" id="hidepoints" >
+       Redeem Name:
+       <input type="text" id="ichannelpoints" name="nchannelpoints" size="10" style="margin:5px 0px">	<input type="checkbox" id="nchannelpointinput" name="nchannelpointinput" > User Input Required <br>
+       Redeem Message:	
+       <input type="text" id="nchannelpointsmsg" name="nchannelpointsmsg" size="20"  >	
+    </div>
+    <div><button type="button" onclick="fakeraid()">Test Raid</button>
+       Amount:
+       <input type="number" min="0" max="999" id="iraidamount" name="nraidamount"  value=1> 
+    </div>
+    <div><button type="button" onclick="fakehost()">Test Host</button>
+       Amount:
+       <input type="number" min="0" max="999" id="ihostamount" name="nhostamount"  value=1>
+    </div>
+    <div><button type="button" onclick="fakechatmsg()">Test Chat Message </button> 	
+       <a class="tslCollapse collapsed" data-bs-toggle="collapse" href="#hidechatmsg" role="button" aria-expanded="false" aria-controls="hidechatmsg"></a>
+    </div>
+    <div class="collapse" id="hidechatmsg">
+       Username: <input type="text" id="ichatname" size="10" value="Lioran"> <br> Message: <input type="text" id="ichatmsg" size="20" style="margin:5px 0px"; value="Hello World">	<br>
+       <input type="checkbox" id="ichatbroadcaster"> Broadcaster <input type="checkbox" id="ichatmod"> Mod <input type="checkbox" id="ichatsub"> Subscriber <input type="checkbox" id="ichatvip"> VIP <br>
+       Subscriber Tier: 
+       <select id="chatmsgsubtier">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+       </select>
+       Month:  <input type="number" min=0 max=12 maxlength="2" oninput="javascript: if (parseInt(this.value) > parseInt(this.max)) this.value = this.max;" id="chatmsgsubmonth" value=1>
+    </div>
+  </div>
+  <!--Twitch Triggers external end-->

@@ -205,7 +205,7 @@ button:active{
 </style>
 </head>
 <body>
-  <div class="container">
+<div class="container">
 <h1 class="text-center">LioranBoard Transmitter </h1>
 <!-- Connection Info -->
 <div class="row justify-content-center">
@@ -236,226 +236,226 @@ button:active{
  <div class="tab-content" id="extensions-tabContent">
 <!--Twitch Triggers external-->
 <div class="tab-pane" id="content-basic" role="tabpanel" title="Twitch Triggers" data-type="default">
-  <button type="button" onclick="fakesub2()">Test Sub</button>
-  <a class="tslCollapse collapsed" data-bs-toggle="collapse" href="#hidesubs" role="button" aria-expanded="false" aria-controls="hidesubs"></a>  
-  <div class="collapse" id="hidesubs"> 
-     <input type="radio" id="itier1" name="tier" value="vtier1" checked>
-     Tier 1
-     <input type="radio" id="itier2" name="tier" value="vtier2">
-     Tier 2
-     <input type="radio" id="itier3" name="tier" value="vtier3" >
-     Tier 3
-     <input type="radio" id="iprime" name="tier" value="vprime" onclick="CheckUncheckSubGift(this)" >
-     Prime <br>
-     <input type="checkbox" id="isubgift" name="subgift" value="vsubgift" onclick="CheckUncheckSubGift(this)">
-     SubGift
-     <input type="checkbox" id="ianongift" name="subgift" value="vanongift" onclick="CheckUncheckSubGift(this)">
-     AnonGift 
-     <input type="number" min="0" max="100" id="nsubmonths" name="nsubmonths" value=1> Months <br>
-     Message:	
-     <input type="text" id="nsubmessage" name="nsubmessage" size="20" value='Hello World!'>
+    <button type="button" onclick="fakesub2()">Test Sub</button>
+    <a class="tslCollapse collapsed" data-bs-toggle="collapse" href="#hidesubs" role="button" aria-expanded="false" aria-controls="hidesubs"></a>  
+    <div class="collapse" id="hidesubs"> 
+       <input type="radio" id="itier1" name="tier" value="vtier1" checked>
+       Tier 1
+       <input type="radio" id="itier2" name="tier" value="vtier2">
+       Tier 2
+       <input type="radio" id="itier3" name="tier" value="vtier3" >
+       Tier 3
+       <input type="radio" id="iprime" name="tier" value="vprime" onclick="CheckUncheckSubGift(this)" >
+       Prime <br>
+       <input type="checkbox" id="isubgift" name="subgift" value="vsubgift" onclick="CheckUncheckSubGift(this)">
+       SubGift
+       <input type="checkbox" id="ianongift" name="subgift" value="vanongift" onclick="CheckUncheckSubGift(this)">
+       AnonGift 
+       <input type="number" min="0" max="100" id="nsubmonths" name="nsubmonths" value=1> Months <br>
+       Message:	
+       <input type="text" id="nsubmessage" name="nsubmessage" size="20" value='Hello World!'>
+    </div>
+    <div>
+       <button type="button" onclick="fakegiftamount()">Test Subs Gift Amount</button>
+       Amount:
+       <input type="number" min="0" max="999" id="igiftamount" name="ngiftamount" value=1> 
+    </div>
+    <button type="button" onclick="fakebits()">Test Bits</button>
+    <a class="tslCollapse collapsed" data-bs-toggle="collapse" href="#hidebits" role="button" aria-expanded="false" aria-controls="hidebits"></a>
+    <div class='collapse' id="hidebits"> 
+       Amount of bits:
+       <input type="number" min="0" max="999" id="ibitsamount" name="nbitsamount"  value=1>
+       Total bits: 	
+       <input type="number" min="0" max="999" id="ibitstotal" name="ibitstotal" value=1000><br/>
+       Message:	
+       <input type="text" id="ibitsmessage" name="ibitsmessage" size="20" style="margin:5px 0px;" value='Hello World!'>
+    </div>
+    <div><button type="button" onclick="fakepoints()">Test Channel Points</button> 
+       <a class="tslCollapse collapsed" data-bs-toggle="collapse" href="#hidepoints" role="button" aria-expanded="false" aria-controls="hidebits"></a>
+    </div>
+    <div class="collapse" id="hidepoints" >
+       Redeem Name:
+       <input type="text" id="ichannelpoints" name="nchannelpoints" size="10" style="margin:5px 0px">	<input type="checkbox" id="nchannelpointinput" name="nchannelpointinput" > User Input Required <br>
+       Redeem Message:	
+       <input type="text" id="nchannelpointsmsg" name="nchannelpointsmsg" size="20"  >	
+    </div>
+    <div><button type="button" onclick="fakeraid()">Test Raid</button>
+       Amount:
+       <input type="number" min="0" max="999" id="iraidamount" name="nraidamount"  value=1> 
+    </div>
+    <div><button type="button" onclick="fakehost()">Test Host</button>
+       Amount:
+       <input type="number" min="0" max="999" id="ihostamount" name="nhostamount"  value=1>
+    </div>
+    <div><button type="button" onclick="fakechatmsg()">Test Chat Message </button> 	
+       <a class="tslCollapse collapsed" data-bs-toggle="collapse" href="#hidechatmsg" role="button" aria-expanded="false" aria-controls="hidechatmsg"></a>
+    </div>
+    <div class="collapse" id="hidechatmsg">
+       Username: <input type="text" id="ichatname" size="10" value="Lioran"> <br> Message: <input type="text" id="ichatmsg" size="20" style="margin:5px 0px"; value="Hello World">	<br>
+       <input type="checkbox" id="ichatbroadcaster"> Broadcaster <input type="checkbox" id="ichatmod"> Mod <input type="checkbox" id="ichatsub"> Subscriber <input type="checkbox" id="ichatvip"> VIP <br>
+       Subscriber Tier: 
+       <select id="chatmsgsubtier">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+       </select>
+       Month:  <input type="number" min=0 max=12 maxlength="2" oninput="javascript: if (parseInt(this.value) > parseInt(this.max)) this.value = this.max;" id="chatmsgsubmonth" value=1>
+    </div>
   </div>
-  <div>
-     <button type="button" onclick="fakegiftamount()">Test Subs Gift Amount</button>
-     Amount:
-     <input type="number" min="0" max="999" id="igiftamount" name="ngiftamount" value=1> 
-  </div>
-  <button type="button" onclick="fakebits()">Test Bits</button>
-  <a class="tslCollapse collapsed" data-bs-toggle="collapse" href="#hidebits" role="button" aria-expanded="false" aria-controls="hidebits"></a>
-  <div class='collapse' id="hidebits"> 
-     Amount of bits:
-     <input type="number" min="0" max="999" id="ibitsamount" name="nbitsamount"  value=1>
-     Total bits: 	
-     <input type="number" min="0" max="999" id="ibitstotal" name="ibitstotal" value=1000><br/>
-     Message:	
-     <input type="text" id="ibitsmessage" name="ibitsmessage" size="20" style="margin:5px 0px;" value='Hello World!'>
-  </div>
-  <div><button type="button" onclick="fakepoints()">Test Channel Points</button> 
-     <a class="tslCollapse collapsed" data-bs-toggle="collapse" href="#hidepoints" role="button" aria-expanded="false" aria-controls="hidebits"></a>
-  </div>
-  <div class="collapse" id="hidepoints" >
-     Redeem Name:
-     <input type="text" id="ichannelpoints" name="nchannelpoints" size="10" style="margin:5px 0px">	<input type="checkbox" id="nchannelpointinput" name="nchannelpointinput" > User Input Required <br>
-     Redeem Message:	
-     <input type="text" id="nchannelpointsmsg" name="nchannelpointsmsg" size="20"  >	
-  </div>
-  <div><button type="button" onclick="fakeraid()">Test Raid</button>
-     Amount:
-     <input type="number" min="0" max="999" id="iraidamount" name="nraidamount"  value=1> 
-  </div>
-  <div><button type="button" onclick="fakehost()">Test Host</button>
-     Amount:
-     <input type="number" min="0" max="999" id="ihostamount" name="nhostamount"  value=1>
-  </div>
-  <div><button type="button" onclick="fakechatmsg()">Test Chat Message </button> 	
-     <a class="tslCollapse collapsed" data-bs-toggle="collapse" href="#hidechatmsg" role="button" aria-expanded="false" aria-controls="hidechatmsg"></a>
-  </div>
-  <div class="collapse" id="hidechatmsg">
-     Username: <input type="text" id="ichatname" size="10" value="Lioran"> <br> Message: <input type="text" id="ichatmsg" size="20" style="margin:5px 0px"; value="Hello World">	<br>
-     <input type="checkbox" id="ichatbroadcaster"> Broadcaster <input type="checkbox" id="ichatmod"> Mod <input type="checkbox" id="ichatsub"> Subscriber <input type="checkbox" id="ichatvip"> VIP <br>
-     Subscriber Tier: 
-     <select id="chatmsgsubtier">
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-     </select>
-     Month:  <input type="number" min=0 max=12 maxlength="2" oninput="javascript: if (parseInt(this.value) > parseInt(this.max)) this.value = this.max;" id="chatmsgsubmonth" value=1>
-  </div>
-</div>
-<!--Twitch Triggers external end-->
+  <!--Twitch Triggers external end-->
 <div class="tab-pane" id="content-status" role="tabpanel" title="Status" data-type="default">
 <!--Get Version external-->
-  <div class='row ml-5 pl-5'>
-     <style>
-        #version_output a{
-        color: #fb4848;
-        }
-        #version_output td{
-        padding:0px 10px;
-        }
-     </style>
-     <h5>Version</h5>
-     <table  class="table ms-2 table-responsive table-Dark table-striped w-auto align-middle" id='version_output'>
-        <thead>
-           <tr>
-              <th scope="col">Name</th>
-              <th scope="col">Latest</th>
-              <th scope="col">Current</th>
-              <th scope="col">Status</th>
-           </tr>
-        </thead>
-        <tbody>
-           <tr>
-              <th scope="row" id='versionOBS'></th>
-              <td id='obs_latestV'></td>
-              <td id='obs_currentV'></td>
-              <td id='obs_status'></td>
-           </tr>
-           <tr>
-              <th scope="row" id='versionOBSWS'></th>
-              <td id='obsws_latestV'></td>
-              <td id='obsws_currentV'></td>
-              <td id='obsws_status'></td>
-           </tr>
-           <tr>
-              <th scope="row" id='versionReceiver'></th>
-              <td id='receiver_latestV'></td>
-              <td id='receiver_currentV'></td>
-              <td id='receiver_status'></td>
-           </tr>
-           <tr>
-              <th scope="row" id='versionStreamDeck'></th>
-              <td id='streamdeck_latestV'></td>
-              <td id='streamdeck_currentV'></td>
-              <td id='streamdeck_status'></td>
-           </tr>
-           <tr>
-              <th scope="row" id='versionTransmitter'></th>
-              <td id='transmitter_latestV'></td>
-              <td id='transmitter_currentV'></td>
-              <td id='transmitter_status'></td>
-           </tr>
-        </tbody>
-     </table>
-  </div>
-  <div class='row pt-2'> <span><button onclick='LBGetVersion()'>Refresh</button> </span> </div>
+<div class='row ml-5 pl-5'>
+    <style>
+       #version_output a{
+       color: #fb4848;
+       }
+       #version_output td{
+       padding:0px 10px;
+       }
+    </style>
+    <h5>Version</h5>
+    <table  class="table ms-2 table-responsive table-Dark table-striped w-auto align-middle" id='version_output'>
+       <thead>
+          <tr>
+             <th scope="col">Name</th>
+             <th scope="col">Latest</th>
+             <th scope="col">Current</th>
+             <th scope="col">Status</th>
+          </tr>
+       </thead>
+       <tbody>
+          <tr>
+             <th scope="row" id='versionOBS'></th>
+             <td id='obs_latestV'></td>
+             <td id='obs_currentV'></td>
+             <td id='obs_status'></td>
+          </tr>
+          <tr>
+             <th scope="row" id='versionOBSWS'></th>
+             <td id='obsws_latestV'></td>
+             <td id='obsws_currentV'></td>
+             <td id='obsws_status'></td>
+          </tr>
+          <tr>
+             <th scope="row" id='versionReceiver'></th>
+             <td id='receiver_latestV'></td>
+             <td id='receiver_currentV'></td>
+             <td id='receiver_status'></td>
+          </tr>
+          <tr>
+             <th scope="row" id='versionStreamDeck'></th>
+             <td id='streamdeck_latestV'></td>
+             <td id='streamdeck_currentV'></td>
+             <td id='streamdeck_status'></td>
+          </tr>
+          <tr>
+             <th scope="row" id='versionTransmitter'></th>
+             <td id='transmitter_latestV'></td>
+             <td id='transmitter_currentV'></td>
+             <td id='transmitter_status'></td>
+          </tr>
+       </tbody>
+    </table>
+ </div>
+ <div class='row pt-2'> <span><button onclick='LBGetVersion()'>Refresh</button> </span> </div>
 <!--Get Version external end-->
   <div class='row pt-3'>
      <h5>Appearance</h5>
      <div class="col col-md-auto"><button type="button" onclick="TSLNoTabs()">No Tabs</button><button type="button" onclick="TSLTabs()">Show Tabs</button></div>
   </div>
 <!--Message Logging external-->
-  <div class='row pt-3 d-block'>
-     <h5>Message Logging</h5>
-     <div class='pl-5 ml-5'>
-        <div class="form-check form-switch">
-           <input class="form-check-input" type="checkbox" id="dbgReceiver" onclick="LBDebugLog(this)" >
-           <label class="form-check-label"for="flexSwitchCheckDefault">Receiver</label>
-        </div>
-        <div class="form-check form-switch">
-           <input class="form-check-input" type="checkbox" id="dbgPubsub" onclick="LBDebugLog(this)">
-           <label class="form-check-label" for="flexSwitchCheckDefault">PubSub</label>
-        </div>
-        <div class="form-check form-switch">
-           <input class="form-check-input" type="checkbox" id="dbgChat" onclick="LBDebugLog(this)">
-           <label class="form-check-label" for="flexSwitchCheckDefault">Twitch Chat</label>
-        </div>
-        <ul class="nav nav-tabs mt-3" id="debugLog" role="tablist">
-           <li class="nav-item" role="presentation">
-              <button class="nav-link active" id="LBreceiver-tab" data-bs-toggle="tab" data-bs-target="#LBreceiver" type="button" role="tab" aria-controls="LBreceiver" aria-selected="true">Receiver</button>
-           </li>
-           <li class="nav-item" role="presentation">
-              <button class="nav-link" id="LBPubSub-tab" data-bs-toggle="tab" data-bs-target="#LBPubSub" type="button" role="tab" aria-controls="LBPubSub" aria-selected="false">PubSub</button>
-           </li>
-           <li class="nav-item" role="presentation">
-              <button class="nav-link" id="LBChat-tab" data-bs-toggle="tab" data-bs-target="#LBChat" type="button" role="tab" aria-controls="LBChat" aria-selected="false">Chat</button>
-           </li>
-        </ul>
-        <div class="tab-content p-0 " id="debugLogContent">
-           <!--LB Receiver Log-->
-           <div class="tab-pane fade show active" id="LBreceiver" role="tabpanel" aria-labelledby="LBreceiver-tab" >
-              <div id="LBreceiverlog" class="col col-10 text-wrap">Logging is disabled.</div>
-           </div>
-           <!--LB Pubsub Log-->
-           <div class="tab-pane fade" id="LBPubSub" role="tabpanel" aria-labelledby="LBPubSub-tab">
-              <div id="LBpubsublog" class="col col-10 text-wrap">Logging is disabled.</div>
-           </div>
-           <!--LB Chat Log-->
-           <div class="tab-pane fade" id="LBChat" role="tabpanel" aria-labelledby="LBChat-tab">
-              <div id="LBchatlog" class="col col-10 text-wrap">Logging is disabled.</div>
-           </div>
-        </div>
-     </div>
-  </div>
+<div class='row pt-3 d-block'>
+    <h5>Message Logging</h5>
+    <div class='pl-5 ml-5'>
+       <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="dbgReceiver" onclick="LBDebugLog(this)" >
+          <label class="form-check-label"for="flexSwitchCheckDefault">Receiver</label>
+       </div>
+       <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="dbgPubsub" onclick="LBDebugLog(this)">
+          <label class="form-check-label" for="flexSwitchCheckDefault">PubSub</label>
+       </div>
+       <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="dbgChat" onclick="LBDebugLog(this)">
+          <label class="form-check-label" for="flexSwitchCheckDefault">Twitch Chat</label>
+       </div>
+       <ul class="nav nav-tabs mt-3" id="debugLog" role="tablist">
+          <li class="nav-item" role="presentation">
+             <button class="nav-link active" id="LBreceiver-tab" data-bs-toggle="tab" data-bs-target="#LBreceiver" type="button" role="tab" aria-controls="LBreceiver" aria-selected="true">Receiver</button>
+          </li>
+          <li class="nav-item" role="presentation">
+             <button class="nav-link" id="LBPubSub-tab" data-bs-toggle="tab" data-bs-target="#LBPubSub" type="button" role="tab" aria-controls="LBPubSub" aria-selected="false">PubSub</button>
+          </li>
+          <li class="nav-item" role="presentation">
+             <button class="nav-link" id="LBChat-tab" data-bs-toggle="tab" data-bs-target="#LBChat" type="button" role="tab" aria-controls="LBChat" aria-selected="false">Chat</button>
+          </li>
+       </ul>
+       <div class="tab-content p-0 " id="debugLogContent">
+          <!--LB Receiver Log-->
+          <div class="tab-pane fade show active" id="LBreceiver" role="tabpanel" aria-labelledby="LBreceiver-tab" >
+             <div id="LBreceiverlog" class="col col-10 text-wrap">Logging is disabled.</div>
+          </div>
+          <!--LB Pubsub Log-->
+          <div class="tab-pane fade" id="LBPubSub" role="tabpanel" aria-labelledby="LBPubSub-tab">
+             <div id="LBpubsublog" class="col col-10 text-wrap">Logging is disabled.</div>
+          </div>
+          <!--LB Chat Log-->
+          <div class="tab-pane fade" id="LBChat" role="tabpanel" aria-labelledby="LBChat-tab">
+             <div id="LBchatlog" class="col col-10 text-wrap">Logging is disabled.</div>
+          </div>
+       </div>
+    </div>
+ </div>
 <!--Message Logging external end-->
 </div>
 <!--Follower Alert external-->
 <div id="content-Follower_Alert" class="tab-pane" title="Follower Alert" data-type="default">
-  <div>Follower Alert extension is installed.</div>
-  <button type="button" onclick="fakefollow()">Test Follower Trigger</button>
-</div>
+    <div>Follower Alert extension is installed.</div>
+    <button type="button" onclick="fakefollow()">Test Follower Trigger</button>
+  </div>
 <!--Follower Alert external end-->
 <!--Change Stream external-->
 <div class="tab-pane" id="content-Change_Twitch_Status" role="tabpanel" title="Change Twitch Status" data-type="default">
-  <div>
-     <p>Change Stream extension is installed</p>
+    <div>
+       <p>Change Stream extension is installed</p>
+    </div>
   </div>
-</div>
 <!--Change Stream external end-->
 <!--Viewer Count external-->
 <div class="tab-pane" id="content-Viewer_Count" role="tabpanel" title="Viewer Count" data-type="default">
-  <div>
-     <p>Get Viewer Count extension is installed</p>
+    <div>
+       <p>Get Viewer Count extension is installed</p>
+    </div>
   </div>
-</div>
 <!--Viewer Count external end-->
 <!--Subscriber Count external-->
 <div id="content-Subscriber_Count" class="tab-pane" title="Subscriber Count" data-type="default">
-  <div>
-     <p>Get Subscriber Count extension is installed</p>
+    <div>
+       <p>Get Subscriber Count extension is installed</p>
+    </div>
   </div>
-</div>
 <!--Subscriber Count external end-->
 <!--Get Channel ID external-->
 <div id="content-Get_Channel_ID" class="tab-pane" title="Get Channel ID" data-type="default">
-  <div>
-     <p>Get Channel ID extension is installed</p>
+    <div>
+       <p>Get Channel ID extension is installed</p>
+    </div>
   </div>
-</div>
 <!--Get Channel ID external end-->
 <!--Bits Leaderboard external-->
 <div id="content-Bits_Leaderboard" class="tab-pane" title="Bits Leaderboard" data-type="default">
-  <div>
-     <p>Bits Leaderboard extension is installed.</p>
+    <div>
+       <p>Bits Leaderboard extension is installed.</p>
+    </div>
   </div>
-</div>
 <!--Bits Leaderboard external end-->
 <!--Get Profile Picture external-->
 <div id="content-Get_Profile_Picture" class="tab-pane" title="Get Profile Picture" data-type="default">
-  <div>
-     <p>Get user profile picture extension is installed.</p>
+    <div>
+       <p>Get user profile picture extension is installed.</p>
+    </div>
   </div>
-</div>
 <!--Get Profile Picture external end-->
 <!--Your external script will be inserted here-->
 <!--<script src="example.js"></script>-->
@@ -469,9 +469,21 @@ button:active{
 </div>
 
 
-    </div>
-  </body>
-  <script>
+</div>
+</body>
+<script>
+  // url for lioranboard
+  let url = 'ws://127.0.0.1:9423';
+  // if you make an extension and it connects to twitch, use this id
+  const TWITCH_CLIENT_ID = 'tpqy40pm79e00s63cqusqepvhwqz1n';
+  // value that says if pubsub is connected or not
+  let on_server = 0;
+  let i_force = '';
+  let twitchreconnecting = 0;
+  let twitchpingid = 0;
+  let just_raided = [];
+  LBDebugPost = (typeof LBDebugPost !== 'undefined') ? LBDebugPost : null
+
 // modify UI on load
 window.addEventListener('load', LBLoadTabsUI, false);
 function LBLoadTabsUI() {
@@ -631,6 +643,13 @@ function TSLTabs() {
   document.getElementById('extensions-tab-buttons').className = 'mt-2';
 }
 
+// change connection status UI
+function ConnectionStatus(id, status, text, fill) {
+  document.getElementById(id).className = `${status} d-none d-md-inline-flex`;
+  document.getElementById(id).innerHTML = ` ${text}`;
+  document.getElementById(`${id}_circle`).setAttribute('fill', fill);
+}
+
 // helper function to set multiple element attributes at once
 Element.prototype.setAttributes = function (obj) {
   for (const prop in obj) {
@@ -638,189 +657,6 @@ Element.prototype.setAttributes = function (obj) {
   }
 };
 
-/// LB helper functions
-
-// construct extension command object
-function LBConstructExtCommand(name) {
-  this.type = 'MESSAGE';
-  this.topic = 'ExtensionCommand';
-  this.name = name;
-  this.boxcount = 0;
-  this.addBox = (boxname, type) => {
-    const p = this.boxcount + 1;
-    this[`boxname${p}`] = boxname;
-    this[`boxtype${p}`] = type;
-    this.boxcount += 1;
-  };
-}
-
-/**
-* send extension command to LB
-* @param {string} name - name of the extension command
-* @param {Object.<string, ('string'|'real'|'boolean')>} boxes
-*   Key = box name, value = box type (string, real, boolean)
-*/
-function LBSendExtCommand(name, boxes) {
-  const ext = new LBConstructExtCommand(name);
-  for (const [key, value] of Object.entries(boxes)) {
-    ext.addBox(key, value);
-  }
-  lioranboardclient.send(JSON.stringify(ext));
-}
-
-/**
-* basic function for fetch requests
-* @param {string} url - url for the fetch request.
-* @param {Object} headers - headers object.
-* @param {Object} body - body object.
-* @param {string} method - method (default=GET)
-*/
-async function fetchRequest(url, headers, body, method = 'GET') {
-  const params = {};
-  params.method = method;
-  params.headers = headers;
-  if (body) params.body = JSON.stringify(body);
-  const response = await fetch(url, params);
-  let content;
-  const text = await response.text();
-  try {
-    content = JSON.parse(text);
-  } catch (e) { content = text; }
-  if (!response.ok) {
-    const error = (content.error) ? content.error.message || 'Something went wrong.' : 'Something went wrong.';
-    throw error;
-  }
-  return content;
-}
-
-/**
-* Send a yellow notification message to LB
-* @param {string} msg - message to send
-*/
-function LBAlert(msg) {
-  lioranboardclient.send(`{"type":"MESSAGE","topic":"AlertMessage","message":"${msg}"}`);
-}
-
-/**
-* Send a popup message to LB
-* @param {string} msg - message to send
-*/
-function LBPopUp(msg) {
-  lioranboardclient.send(`{"type":"MESSAGE","topic":"PopupMessage","message":"${msg}"}`);
-}
-
-/**
-* Set a value in LB
-* @param {string} name - name of the variable
-* @param {(string|number)} value - new value of the variable
-* @param {boolean} real - whether the value is real (default = not real)
-*/
-function LBSetValue(name, value, real = false) {
-  if (!real) value = `"${value}"`;
-  lioranboardclient.send(`{"type":"MESSAGE","topic":"SetValue","valuename":"${name}","value":${value}},"real":${real}}`);
-}
-
-/**
-* Get a variable from LB (you can retrieve it via its hook)
-* @param {string} name - name of the variable
-* @param {string} hook - name of the hook to receive the data
-*/
-function LBGetValue(name, hook) {
-  lioranboardclient.send(`{"type":"MESSAGE","topic":"GetVariable","variable":"${name}","datatype":"${hook}"}`);
-}
-
-/**
-* Send an extension trigger to LB (max 20 values)
-* @param {string} trigger - name of the extension trigger
-* @param {(string|real)} values - values for math trigger pull command
-*/
-function LBTriggerExt(trigger, ...values) {
-  const obj = { type: 'MESSAGE', topic: 'ExtensionTrigger', trigger };
-  for (let i = 0; i < values.length; i += 1) {
-    obj[`value${i + 1}`] = values[i];
-  }
-  lioranboardclient.send(JSON.stringify(obj));
-}
-
-/**
-* Trigger a button in LB
-* @param {string} id - button ID
-* @param {boolean} queuable - whether the button should be queuable (default=false)
-*/
-function LBTriggerBtn(id, queuable = false) {
-  lioranboardclient.send(`{"type":"MESSAGE","topic":"ButtonTrigger","buttonid":"${id}","queuable":${queuable}}`);
-}
-
-/**
-* Modify a button in LB
-* @param {string} id - button ID
-* @param {string} text - button text
-* @param {number} red - red RGB value
-* @param {number} green - green RGB value
-* @param {number} blue - blue RGB value
-* @param {string} picture - picture url
-* @param {number} border - border size
-*/
-function LBModifyBtn(id, text = 'notext', red = -1, green = -1, blue = -1, picture = '', border = -1) {
-  lioranboardclient.send(`{"type":"MESSAGE","topic":"ModifyButton","buttonid":"${id}","text":"${text}", "red":${red}, "green":${green}, "blue":${blue}, "picture":"${picture}", "border":${border}}`);
-}
-
-/**
-* Get a whole stack from LB (you can retrieve it via its hook)
-* @param {string} name - name of the stack
-* @param {string} hook - name of the hook
-*/
-function LBStackGet(name, hook) {
-  lioranboardclient.send(`{"type":"MESSAGE","topic":"GetStack","name":"${name}","datatype":"${hook}"}`);
-}
-
-/**
-* Add a value to stack in LB
-* @param {string} name - name of the stack
-* @param {(string|number)} position - position to add the value to
-* @param {(string|number)} value - value to add
-*/
-function LBStackAdd(name, position, value) {
-  lioranboardclient.send(`{"type":"MESSAGE","topic":"AddStack","name":"${name}","position":"${position}", "value":"${value}"}`);
-}
-
-/**
-* Replace a value in stack in LB
-* @param {string} name - name of the stack
-* @param {(string|number)} position - position to replace the value
-* @param {(string|number)} value - value to replace
-*/
-function LBStackReplace(name, position, value) {
-  lioranboardclient.send(`{"type":"MESSAGE","topic":"ReplaceStack","name":"${name}","position":${position}, "value":"${value}"}`);
-}
-
-/**
-* Append a whole array to stack in LB
-* @param {string} name - name of the stack
-* @param {array} array - array to append
-*/
-function LBStackAppend(name, array) {
-  lioranboardclient.send(`{"type":"MESSAGE","topic":"AppendStack","name":"${name}","values":${JSON.stringify(array)}}`);
-}
-
-/**
-* Remove a value from stack in LB
-* @param {string} name - name of the stack
-* @param {(string|number)} position - position to remove the value from
-*/
-function LBStackRemove(name, position) {
-  lioranboardclient.send(`{"type":"MESSAGE","topic":"RemoveStack","name":"${name}","position":"${position}"}`);
-}
-
-/**
-* Delete a whole stack in LB
-* @param {string} name - name of the stack to delete
-*/
-function LBStackDelete(name) {
-  lioranboardclient.send(`{"type":"MESSAGE","topic":"DeleteStack","name":"${name}"}`);
-}
-
-/// LB helper functions end
 // fake subscriber testing
 function fakesub() {
   let i_str;
@@ -932,19 +768,10 @@ function fakename(name = 'none') {
   if (name !== randomName) return randomName;
   return fakename(name);
 }  
-  // url for lioranboard
-  let url = 'ws://127.0.0.1:9423';
-  // if you make an extension and it connects to twitch, use this id
-  const TWITCH_CLIENT_ID = 'tpqy40pm79e00s63cqusqepvhwqz1n';
-  // value that says if pubsub is connected or not
-  let on_server = 0;
-  let i_force = '';
-  let twitchreconnecting = 0;
-  let twitchpingid = 0;
-  let just_raided = [];
-  LBDebugPost = (typeof LBDebugPost !== 'undefined') ? LBDebugPost : null
-
-// main connection to LioranBoard Stream Deck
+// Receiver connection
+// connect to LB
+connecttoboard();
+// function to establish connection to LB
 function connecttoboard() {
   lioranboardclient = (new WebSocket(url));
   lioranboardclient.binaryType = 'arraybuffer';
@@ -995,7 +822,6 @@ LBSendExtCommand('Check Leaderboard', { oauth_token: 'string' });
 //[Get Profile Picture command]
 LBSendExtCommand('Get Profile Picture', { oauth_token: 'string', user_name: 'string', value_name: 'string' });
 //[Get Profile Picture command end]
-
 // You LioranBoard extension command will be inserted here
 /*INSERT PART 2*/
  
@@ -1006,8 +832,6 @@ LBSendExtCommand('Get Profile Picture', { oauth_token: 'string', user_name: 'str
     boardmessage(event);
   };
 }
-// init that function right away
-connecttoboard();
 
 // receiving a message from lioranboard
 function boardmessage(event) {
@@ -1055,36 +879,29 @@ function boardmessage(event) {
     console.log('Message received from LioranBoard is not a string.');
   }
 }
-
 // call Twitch api to get user token and info
 function apiconnect(api_request) {
-  // get information about OAuth token
-  (function getAuthToken() {
-    const url = 'https://id.twitch.tv/oauth2/validate';
-    const headers = {
-      Authorization: `OAuth ${api_request}`,
-    };
-    fetchRequest(url, headers)
-      .then((res) => lioranboardclient.send(`tokeninfo:${JSON.stringify(res)}`))
-      .catch((e) => LBAlert(`Twitch Oauth2 Validate Error: ${e}`));
-  }())(function getUserInfo() {
-    const url = 'https://api.twitch.tv/helix/users';
-    const headers = {
-      Authorization: `Bearer ${api_request}`,
-      'Client-ID': TWITCH_CLIENT_ID,
-    };
-    fetchRequest(url, headers, null, 'PUT')
-      .then((res) => lioranboardclient.send(`userinfo:${JSON.stringify(res)}`))
-      .catch((e) => LBAlert(`Twitch Getting User Info Error: ${e}`));
-  }());
-}
-
-// change connection status UI
-function ConnectionStatus(id, status, text, fill) {
-  document.getElementById(id).className = `${status} d-none d-md-inline-flex`;
-  document.getElementById(id).innerHTML = ` ${text}`;
-  document.getElementById(`${id}_circle`).setAttribute('fill', fill);
-}
+    // get information about OAuth token
+    (function getAuthToken() {
+      const url = 'https://id.twitch.tv/oauth2/validate';
+      const headers = {
+        Authorization: `OAuth ${api_request}`,
+      };
+      fetchRequest(url, headers)
+        .then((res) => lioranboardclient.send(`tokeninfo:${JSON.stringify(res)}`))
+        .catch((e) => LBAlert(`Twitch Oauth2 Validate Error: ${e}`));
+    }())(function getUserInfo() {
+      const url = 'https://api.twitch.tv/helix/users';
+      const headers = {
+        Authorization: `Bearer ${api_request}`,
+        'Client-ID': TWITCH_CLIENT_ID,
+      };
+      fetchRequest(url, headers, null, 'PUT')
+        .then((res) => lioranboardclient.send(`userinfo:${JSON.stringify(res)}`))
+        .catch((e) => LBAlert(`Twitch Getting User Info Error: ${e}`));
+    }());
+  }
+/// PubSub connection
 // connect to Twitch pubsub
 function connectserver() {
   pubsubserver = (new WebSocket('wss://pubsub-edge.twitch.tv'));
@@ -1136,6 +953,7 @@ function servermessage(event) {
     // console.log("Message received from PubSub is not a string")
   }
 }
+/// PubSub connection end
 function twitchchatping() {
   TwitchChatConnect.send('PONG :tmi.twitch.tv');
 }
@@ -1385,8 +1203,190 @@ function IRCdataparse(str, parse) {
   }
   return str;
 }
+/// LB helper functions
 
-  
+// construct extension command object
+function LBConstructExtCommand(name) {
+  this.type = 'MESSAGE';
+  this.topic = 'ExtensionCommand';
+  this.name = name;
+  this.boxcount = 0;
+  this.addBox = (boxname, type) => {
+    const p = this.boxcount + 1;
+    this[`boxname${p}`] = boxname;
+    this[`boxtype${p}`] = type;
+    this.boxcount += 1;
+  };
+}
+
+/**
+* send extension command to LB
+* @param {string} name - name of the extension command
+* @param {Object.<string, ('string'|'real'|'boolean')>} boxes
+*   Key = box name, value = box type (string, real, boolean)
+*/
+function LBSendExtCommand(name, boxes) {
+  const ext = new LBConstructExtCommand(name);
+  for (const [key, value] of Object.entries(boxes)) {
+    ext.addBox(key, value);
+  }
+  lioranboardclient.send(JSON.stringify(ext));
+}
+
+/**
+* basic function for fetch requests
+* @param {string} url - url for the fetch request.
+* @param {Object} headers - headers object.
+* @param {Object} body - body object.
+* @param {string} method - method (default=GET)
+*/
+async function fetchRequest(url, headers, body, method = 'GET') {
+  const params = {};
+  params.method = method;
+  params.headers = headers;
+  if (body) params.body = JSON.stringify(body);
+  const response = await fetch(url, params);
+  let content;
+  const text = await response.text();
+  try {
+    content = JSON.parse(text);
+  } catch (e) { content = text; }
+  if (!response.ok) {
+    const error = (content.error) ? content.error.message || 'Something went wrong.' : 'Something went wrong.';
+    throw error;
+  }
+  return content;
+}
+
+/**
+* Send a yellow notification message to LB
+* @param {string} msg - message to send
+*/
+function LBAlert(msg) {
+  lioranboardclient.send(`{"type":"MESSAGE","topic":"AlertMessage","message":"${msg}"}`);
+}
+
+/**
+* Send a popup message to LB
+* @param {string} msg - message to send
+*/
+function LBPopUp(msg) {
+  lioranboardclient.send(`{"type":"MESSAGE","topic":"PopupMessage","message":"${msg}"}`);
+}
+
+/**
+* Set a value in LB
+* @param {string} name - name of the variable
+* @param {(string|number)} value - new value of the variable
+* @param {boolean} real - whether the value is real (default = not real)
+*/
+function LBSetValue(name, value, real = false) {
+  if (!real) value = `"${value}"`;
+  lioranboardclient.send(`{"type":"MESSAGE","topic":"SetValue","valuename":"${name}","value":${value}},"real":${real}}`);
+}
+
+/**
+* Get a variable from LB (you can retrieve it via its hook)
+* @param {string} name - name of the variable
+* @param {string} hook - name of the hook to receive the data
+*/
+function LBGetValue(name, hook) {
+  lioranboardclient.send(`{"type":"MESSAGE","topic":"GetVariable","variable":"${name}","datatype":"${hook}"}`);
+}
+
+/**
+* Send an extension trigger to LB (max 20 values)
+* @param {string} trigger - name of the extension trigger
+* @param {(string|real)} values - values for math trigger pull command
+*/
+function LBTriggerExt(trigger, ...values) {
+  const obj = { type: 'MESSAGE', topic: 'ExtensionTrigger', trigger };
+  for (let i = 0; i < values.length; i += 1) {
+    obj[`value${i + 1}`] = values[i];
+  }
+  lioranboardclient.send(JSON.stringify(obj));
+}
+
+/**
+* Trigger a button in LB
+* @param {string} id - button ID
+* @param {boolean} queuable - whether the button should be queuable (default=false)
+*/
+function LBTriggerBtn(id, queuable = false) {
+  lioranboardclient.send(`{"type":"MESSAGE","topic":"ButtonTrigger","buttonid":"${id}","queuable":${queuable}}`);
+}
+
+/**
+* Modify a button in LB
+* @param {string} id - button ID
+* @param {string} text - button text
+* @param {number} red - red RGB value
+* @param {number} green - green RGB value
+* @param {number} blue - blue RGB value
+* @param {string} picture - picture url
+* @param {number} border - border size
+*/
+function LBModifyBtn(id, text = 'notext', red = -1, green = -1, blue = -1, picture = '', border = -1) {
+  lioranboardclient.send(`{"type":"MESSAGE","topic":"ModifyButton","buttonid":"${id}","text":"${text}", "red":${red}, "green":${green}, "blue":${blue}, "picture":"${picture}", "border":${border}}`);
+}
+
+/**
+* Get a whole stack from LB (you can retrieve it via its hook)
+* @param {string} name - name of the stack
+* @param {string} hook - name of the hook
+*/
+function LBStackGet(name, hook) {
+  lioranboardclient.send(`{"type":"MESSAGE","topic":"GetStack","name":"${name}","datatype":"${hook}"}`);
+}
+
+/**
+* Add a value to stack in LB
+* @param {string} name - name of the stack
+* @param {(string|number)} position - position to add the value to
+* @param {(string|number)} value - value to add
+*/
+function LBStackAdd(name, position, value) {
+  lioranboardclient.send(`{"type":"MESSAGE","topic":"AddStack","name":"${name}","position":"${position}", "value":"${value}"}`);
+}
+
+/**
+* Replace a value in stack in LB
+* @param {string} name - name of the stack
+* @param {(string|number)} position - position to replace the value
+* @param {(string|number)} value - value to replace
+*/
+function LBStackReplace(name, position, value) {
+  lioranboardclient.send(`{"type":"MESSAGE","topic":"ReplaceStack","name":"${name}","position":${position}, "value":"${value}"}`);
+}
+
+/**
+* Append a whole array to stack in LB
+* @param {string} name - name of the stack
+* @param {array} array - array to append
+*/
+function LBStackAppend(name, array) {
+  lioranboardclient.send(`{"type":"MESSAGE","topic":"AppendStack","name":"${name}","values":${JSON.stringify(array)}}`);
+}
+
+/**
+* Remove a value from stack in LB
+* @param {string} name - name of the stack
+* @param {(string|number)} position - position to remove the value from
+*/
+function LBStackRemove(name, position) {
+  lioranboardclient.send(`{"type":"MESSAGE","topic":"RemoveStack","name":"${name}","position":"${position}"}`);
+}
+
+/**
+* Delete a whole stack in LB
+* @param {string} name - name of the stack to delete
+*/
+function LBStackDelete(name) {
+  lioranboardclient.send(`{"type":"MESSAGE","topic":"DeleteStack","name":"${name}"}`);
+}
+
+/// LB helper functions end
+
   /*
   START EXTENSION STUFF HERE
   Extension are a way to connect LioranBoard to other apps and services. 
@@ -1405,219 +1405,63 @@ function LBExtensionReceived() {
     default:
       console.log(LioranBoardJSON, `Warning: Hook is missing. Extension ${LioranBoardJSON.datatype} seems to not be correctly installed.`);
       break;
+//[Get Version hook]
+case 'LBVersionHook':
+    if (typeof window.LBVersion === 'undefined') window.LBVersion = {};
+    window.LBVersion[LioranBoardJSON.variable] = LioranBoardJSON.value;
+    if (Object.values(window.LBVersion).length === 3) LBProcessVersion(window.LBVersion);
+    break;
+//[Get Version hook end]
 //[Message Logging hook]
 //[Message Logging hook end]
-//[Get Version hook]
-    case 'LBVersionHook':
-      if (typeof window.LBVersion === 'undefined') window.LBVersion = {};
-      window.LBVersion[LioranBoardJSON.variable] = LioranBoardJSON.value;
-      if (Object.values(window.LBVersion).length === 3) LBProcessVersion(window.LBVersion);
-      break;
-//[Get Version hook end]
 //[Change Stream hook]
-    case 'ChangeStream':
-      LBChangeStream(LioranBoardJSON.oauth_token, LioranBoardJSON.channel_id, LioranBoardJSON.title, LioranBoardJSON.game);
-      break;
+case 'ChangeStream':
+    LBChangeStream(LioranBoardJSON.oauth_token, LioranBoardJSON.channel_id, LioranBoardJSON.title, LioranBoardJSON.game);
+    break;
 //[Change Stream hook end]
 //[Viewer Count hook]
-    case 'GetViewerCount':
-      LBGetViewCount(LioranBoardJSON.channel_id, LioranBoardJSON.value_name);
-      break;
+case 'GetViewerCount':
+    LBGetViewCount(LioranBoardJSON.channel_id, LioranBoardJSON.value_name);
+    break;
 //[Viewer Count hook end]
 //[Subscriber Count hook]
-    case 'GetSubscriberCount':
-      LBGetSubCount(LioranBoardJSON.oauth_token, LioranBoardJSON.channel_id, LioranBoardJSON.value_name);
-      break;
+case 'GetSubscriberCount':
+    LBGetSubCount(LioranBoardJSON.oauth_token, LioranBoardJSON.channel_id, LioranBoardJSON.value_name);
+    break;
 //[Subscriber Count hook end]
 //[Get Channel ID hook]
-    case 'GetChannelId':
-      GetChannelId(LioranBoardJSON.oauth_token, LioranBoardJSON.name, LioranBoardJSON.Variable);
-      break;
+case 'GetChannelId':
+    GetChannelId(LioranBoardJSON.oauth_token, LioranBoardJSON.name, LioranBoardJSON.Variable);
+    break;
 //[Get Channel ID hook end]
 //[Follower Alert hook]
-    case 'FollowerAlert':
-      LBAlert('Listening for Followers.')
-      // cancel previous interval incase it is set again
-      CheckFollowerFirst = 0;
-      CheckFollowerList = new Array();
-      if (typeof CheckFollowerTimer !== 'undefined') { clearInterval(CheckFollowerTimer); }
-      CheckFollowerId = LioranBoardJSON.channel_id;
-      LBCheckFollowers();
-      // set a repeat so this happens every 10 second so you can compare old list and new list
-      CheckFollowerTimer = setInterval(LBCheckFollowers, 10000);
-      break;
+case 'FollowerAlert':
+    LBAlert('Listening for Followers.')
+    // cancel previous interval incase it is set again
+    CheckFollowerFirst = 0;
+    CheckFollowerList = new Array();
+    if (typeof CheckFollowerTimer !== 'undefined') { clearInterval(CheckFollowerTimer); }
+    CheckFollowerId = LioranBoardJSON.channel_id;
+    LBCheckFollowers();
+    // set a repeat so this happens every 10 second so you can compare old list and new list
+    CheckFollowerTimer = setInterval(LBCheckFollowers, 10000);
+    break;
 //[Follower Alert hook end]
 //[Bits Leaderboard hook]
-    case 'CheckLeaderboard':
-      LBCheckBitsLeaderboard(LioranBoardJSON.oauth_token);
-      break;
+case 'CheckLeaderboard':
+    LBCheckBitsLeaderboard(LioranBoardJSON.oauth_token);
+    break;
 //[Bits Leaderboard hook end]
 //[Get Profile Picture hook]
-    case 'GetProfilePicture':
-      GetProfilePicture(LioranBoardJSON.oauth_token, LioranBoardJSON.user_name, LioranBoardJSON.value_name);
-      break;
+case 'GetProfilePicture':
+    GetProfilePicture(LioranBoardJSON.oauth_token, LioranBoardJSON.user_name, LioranBoardJSON.value_name);
+    break;
 //[Get Profile Picture hook end]
 //You hooks will be inserted here
 /*INSERT PART 3*/
    }
 }
 
-  
-//[Change Stream script]
-function LBChangeStream(oauthtoken, channel_id, title, game) {
-  const change_stream = {};
-  change_stream.channel = {};
-  // add title change if not empty string
-  if (title !== '') {
-    change_stream.channel.status = title;
-  }
-  // add game change if not empty string
-  if (game !== '') {
-    change_stream.channel.game = game;
-  }
-  // send request to twitch
-  const url = `https://api.twitch.tv/kraken/channels/${channel_id}`;
-  const headers = {
-    Accept: 'application/vnd.twitchtv.v5+json',
-    'Content-Type': 'application/json',
-    Authorization: `OAuth ${oauthtoken}`,
-    'Client-ID': TWITCH_CLIENT_ID,
-  };
-  fetchRequest(url, headers, change_stream, 'PUT')
-    .then(() => LBAlert('Stream Status successfully changed'))
-    .catch((e) => LBAlert(`Stream Status Error: ${e}`));
-}
-//[Change Stream script end]
-//[Viewer Count script]
-function LBGetViewCount(channelid, valuename) {
-  const url = `https://api.twitch.tv/kraken/streams/${channelid}`;
-  const method = 'GET';
-  const headers = {
-    Accept: 'application/vnd.twitchtv.v5+json',
-    'Client-ID': TWITCH_CLIENT_ID,
-  };
-  fetchRequest(url, headers, null, method)
-    .then((res) => {
-      let count = -1;
-      if (res.stream != null) count = res.stream.viewers;
-      LBSetValue(valuename, count, true);
-    })
-    .catch((e) => LBAlert(`Viewer Count Error: ${e}`));
-}
-//[Viewer Count script end]
-//[Subscriber Count script]
-function LBGetSubCount(oauthtoken, channelid, valuename) {
-  const url = `https://api.twitch.tv/kraken/channels/${channelid}/subscriptions?limit=5`;
-  const headers = {
-    Accept: 'application/vnd.twitchtv.v5+json',
-    Authorization: `OAuth ${oauthtoken}`,
-    'Client-ID': TWITCH_CLIENT_ID,
-  };
-  fetchRequest(url, headers)
-    .then((res) => LBSetValue(valuename, res._total - 1, true))
-    .catch((e) => LBAlert(`Get Sub Count Error: ${e}`));
-}
-//[Subscriber Count script end]
-//[Get Channel ID script]
-function GetChannelId(oauthtoken, loginname, variable) {
-  const url = `https://api.twitch.tv/helix/users?login=${loginname}`;
-  const headers = {
-    Authorization: `Bearer ${oauthtoken}`,
-    'Client-ID': TWITCH_CLIENT_ID,
-  };
-  fetchRequest(url, headers)
-    .then((res) => lioranboardclient.send(`{"type":"MESSAGE","topic":"SetVariable","variable":"${variable}","value":"${res.data[0].id}"}`))
-    .catch((e) => LBAlert(`Get Channel ID Error: ${e}`));
-}
-//[Get Channel ID script end]
-//[Follower Alert script]
-function LBCheckFollowers() {
-  const url = `https://api.twitch.tv/kraken/channels/${CheckFollowerId}/follows?limit=${30 - CheckFollowerFirst * 15}`;
-  const headers = {
-    Accept: 'application/vnd.twitchtv.v5+json',
-    'Client-ID': TWITCH_CLIENT_ID,
-  };
-  fetchRequest(url, headers)
-    .then((res) => followListener(res))
-    .catch((e) => LBAlert(`LB Follower Alert Error: ${e}`));
-
-  // listen for receiving follower list
-  function followListener(followerJSON) {
-    if (followerJSON._total == 0) {
-      LBAlert('Something went wrong with Follower Listener.');
-      return 0;
-    }
-    let i_cd = followerJSON._total;
-    if (i_cd > (30 - CheckFollowerFirst * 15)) { i_cd = (30 - CheckFollowerFirst * 15); }
-    if (CheckFollowerFirst == 0) {
-      for (var ii = 0; ii < i_cd; ii++) {
-        CheckFollowerList.push(followerJSON.follows[ii].user.name);
-      }
-    }
-
-    // go through the list and compare to old one see if there is any new names in the new one
-    i_cd--;
-    if (typeof oldfollowerJSON !== 'undefined') {
-      for (var ii = i_cd; ii >= 0; ii--) {
-        if (oldfollowerJSON.follows.some((item) => item.user.name === followerJSON.follows[ii].user.name) == false) {
-          if (CheckFollowerList.some((item) => item === followerJSON.follows[ii].user.name) == false) {
-            CheckFollowerList.push(followerJSON.follows[ii].user.name);
-            // send to lioran board as "Follower Alert" with value1 being the name of the follower. pull 1 is their name  pull 2 is channel id of the personne
-            LBTriggerExt('Follower Alert', followerJSON.follows[ii].user.name, followerJSON.follows[ii].user._id, followerJSON.follows[ii].user.display_name);
-          }
-        }
-      }
-    }
-    CheckFollowerFirst = 1;
-    oldfollowerJSON = followerJSON;
-    followerJSON = null;
-    return 1;
-  }
-}
-function fakefollow() {
-  const i_name = fakename();
-  LBTriggerExt('Follower Alert', i_name.toLowerCase(), '123456789', i_name);
-}
-//[Follower Alert script end]
-//[Bits Leaderboard script]
-function LBCheckBitsLeaderboard(oauthtoken) {
-  const url = 'https://api.twitch.tv/helix/bits/leaderboard?count=3';
-  const headers = {
-    Authorization: `Bearer ${oauthtoken}`,
-    'Client-ID': TWITCH_CLIENT_ID,
-  };
-
-  fetchRequest(url, headers)
-    .then((res) => BitsLeaderboardListener(res))
-    .catch((e) => LBAlert(`Bits Leaderboard Error: ${e}`));
-  // listening for twitch reply
-  function BitsLeaderboardListener(BitsLeaderboardJSON) {
-    // set values for all the relevant info
-    LBSetValue('no1_bits', BitsLeaderboardJSON.data[0].user_name, false);
-    LBSetValue('no1_bits_score', BitsLeaderboardJSON.data[0].score, true);
-    LBSetValue('no2_bits', BitsLeaderboardJSON.data[1].user_name, false);
-    LBSetValue('no2_bits_score', BitsLeaderboardJSON.data[1].score, true);
-    LBSetValue('no3_bits', BitsLeaderboardJSON.data[2].user_name, false);
-    LBSetValue('no3_bits_score', BitsLeaderboardJSON.data[2].score, true);
-    // send an extension trigger "Bits Leaderboard"
-    LBTriggerExt('Bits Leaderboard', '');
-  }
-}
-//[Bits Leaderboard script end]
-//[Get Profile Picture script]
-function GetProfilePicture(oauthtoken, user_name, value_name) {
-  const url = `https://api.twitch.tv/kraken/users?login=${user_name}`;
-  const headers = {
-    'Content-Type': 'application/json',
-    Authorization: `Bearer ${oauthtoken}`,
-    'Client-ID': TWITCH_CLIENT_ID,
-    Accept: 'application/vnd.twitchtv.v5+json',
-  };
-  fetchRequest(url, headers)
-    .then((res) => LBSetValue(value_name, res.users[0].logo))
-    .catch((e) => LBAlert(`Get Profile Picture Error: ${e}`));
-}
-//[Get Profile Picture script end]
 //[Get Version script]
 function LBGetVersion() {
   LBGetValue('obs_websocket_version', 'LBVersionHook');
@@ -1784,6 +1628,161 @@ function LBDebugPost(type, msg) {
   }
 }
 //[Message Logging script end]
+//[Change Stream script]
+function LBChangeStream(oauthtoken, channel_id, title, game) {
+  const change_stream = {};
+  change_stream.channel = {};
+  // add title change if not empty string
+  if (title !== '') {
+    change_stream.channel.status = title;
+  }
+  // add game change if not empty string
+  if (game !== '') {
+    change_stream.channel.game = game;
+  }
+  // send request to twitch
+  const url = `https://api.twitch.tv/kraken/channels/${channel_id}`;
+  const headers = {
+    Accept: 'application/vnd.twitchtv.v5+json',
+    'Content-Type': 'application/json',
+    Authorization: `OAuth ${oauthtoken}`,
+    'Client-ID': TWITCH_CLIENT_ID,
+  };
+  fetchRequest(url, headers, change_stream, 'PUT')
+    .then(() => LBAlert('Stream Status successfully changed'))
+    .catch((e) => LBAlert(`Stream Status Error: ${e}`));
+}
+//[Change Stream script end]
+//[Viewer Count script]
+function LBGetViewCount(channelid, valuename) {
+  const url = `https://api.twitch.tv/kraken/streams/${channelid}`;
+  const method = 'GET';
+  const headers = {
+    Accept: 'application/vnd.twitchtv.v5+json',
+    'Client-ID': TWITCH_CLIENT_ID,
+  };
+  fetchRequest(url, headers, null, method)
+    .then((res) => {
+      let count = -1;
+      if (res.stream != null) count = res.stream.viewers;
+      LBSetValue(valuename, count, true);
+    })
+    .catch((e) => LBAlert(`Viewer Count Error: ${e}`));
+}
+//[Viewer Count script end]
+//[Subscriber Count script]
+function LBGetSubCount(oauthtoken, channelid, valuename) {
+  const url = `https://api.twitch.tv/kraken/channels/${channelid}/subscriptions?limit=5`;
+  const headers = {
+    Accept: 'application/vnd.twitchtv.v5+json',
+    Authorization: `OAuth ${oauthtoken}`,
+    'Client-ID': TWITCH_CLIENT_ID,
+  };
+  fetchRequest(url, headers)
+    .then((res) => LBSetValue(valuename, res._total - 1, true))
+    .catch((e) => LBAlert(`Get Sub Count Error: ${e}`));
+}
+//[Subscriber Count script end]
+//[Get Channel ID script]
+function GetChannelId(oauthtoken, loginname, variable) {
+  const url = `https://api.twitch.tv/helix/users?login=${loginname}`;
+  const headers = {
+    Authorization: `Bearer ${oauthtoken}`,
+    'Client-ID': TWITCH_CLIENT_ID,
+  };
+  fetchRequest(url, headers)
+    .then((res) => lioranboardclient.send(`{"type":"MESSAGE","topic":"SetVariable","variable":"${variable}","value":"${res.data[0].id}"}`))
+    .catch((e) => LBAlert(`Get Channel ID Error: ${e}`));
+}
+//[Get Channel ID script end]
+//[Follower Alert script]
+function LBCheckFollowers() {
+  const url = `https://api.twitch.tv/kraken/channels/${CheckFollowerId}/follows?limit=${30 - CheckFollowerFirst * 15}`;
+  const headers = {
+    Accept: 'application/vnd.twitchtv.v5+json',
+    'Client-ID': TWITCH_CLIENT_ID,
+  };
+  fetchRequest(url, headers)
+    .then((res) => followListener(res))
+    .catch((e) => LBAlert(`LB Follower Alert Error: ${e}`));
+
+  // listen for receiving follower list
+  function followListener(followerJSON) {
+    if (followerJSON._total == 0) {
+      LBAlert('Something went wrong with Follower Listener.');
+      return 0;
+    }
+    let i_cd = followerJSON._total;
+    if (i_cd > (30 - CheckFollowerFirst * 15)) { i_cd = (30 - CheckFollowerFirst * 15); }
+    if (CheckFollowerFirst == 0) {
+      for (var ii = 0; ii < i_cd; ii++) {
+        CheckFollowerList.push(followerJSON.follows[ii].user.name);
+      }
+    }
+
+    // go through the list and compare to old one see if there is any new names in the new one
+    i_cd--;
+    if (typeof oldfollowerJSON !== 'undefined') {
+      for (var ii = i_cd; ii >= 0; ii--) {
+        if (oldfollowerJSON.follows.some((item) => item.user.name === followerJSON.follows[ii].user.name) == false) {
+          if (CheckFollowerList.some((item) => item === followerJSON.follows[ii].user.name) == false) {
+            CheckFollowerList.push(followerJSON.follows[ii].user.name);
+            // send to lioran board as "Follower Alert" with value1 being the name of the follower. pull 1 is their name  pull 2 is channel id of the personne
+            LBTriggerExt('Follower Alert', followerJSON.follows[ii].user.name, followerJSON.follows[ii].user._id, followerJSON.follows[ii].user.display_name);
+          }
+        }
+      }
+    }
+    CheckFollowerFirst = 1;
+    oldfollowerJSON = followerJSON;
+    followerJSON = null;
+    return 1;
+  }
+}
+function fakefollow() {
+  const i_name = fakename();
+  LBTriggerExt('Follower Alert', i_name.toLowerCase(), '123456789', i_name);
+}
+//[Follower Alert script end]
+//[Bits Leaderboard script]
+function LBCheckBitsLeaderboard(oauthtoken) {
+  const url = 'https://api.twitch.tv/helix/bits/leaderboard?count=3';
+  const headers = {
+    Authorization: `Bearer ${oauthtoken}`,
+    'Client-ID': TWITCH_CLIENT_ID,
+  };
+
+  fetchRequest(url, headers)
+    .then((res) => BitsLeaderboardListener(res))
+    .catch((e) => LBAlert(`Bits Leaderboard Error: ${e}`));
+  // listening for twitch reply
+  function BitsLeaderboardListener(BitsLeaderboardJSON) {
+    // set values for all the relevant info
+    LBSetValue('no1_bits', BitsLeaderboardJSON.data[0].user_name, false);
+    LBSetValue('no1_bits_score', BitsLeaderboardJSON.data[0].score, true);
+    LBSetValue('no2_bits', BitsLeaderboardJSON.data[1].user_name, false);
+    LBSetValue('no2_bits_score', BitsLeaderboardJSON.data[1].score, true);
+    LBSetValue('no3_bits', BitsLeaderboardJSON.data[2].user_name, false);
+    LBSetValue('no3_bits_score', BitsLeaderboardJSON.data[2].score, true);
+    // send an extension trigger "Bits Leaderboard"
+    LBTriggerExt('Bits Leaderboard', '');
+  }
+}
+//[Bits Leaderboard script end]
+//[Get Profile Picture script]
+function GetProfilePicture(oauthtoken, user_name, value_name) {
+  const url = `https://api.twitch.tv/kraken/users?login=${user_name}`;
+  const headers = {
+    'Content-Type': 'application/json',
+    Authorization: `Bearer ${oauthtoken}`,
+    'Client-ID': TWITCH_CLIENT_ID,
+    Accept: 'application/vnd.twitchtv.v5+json',
+  };
+  fetchRequest(url, headers)
+    .then((res) => LBSetValue(value_name, res.users[0].logo))
+    .catch((e) => LBAlert(`Get Profile Picture Error: ${e}`));
+}
+//[Get Profile Picture script end]
 // your main script will be inserted here
 /*INSERT PART 4*/
 

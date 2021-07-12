@@ -19,14 +19,11 @@
 </style>
 </head>
 <body>
-  <div class="container">
+<div class="container">
 {{ content }}
-    </div>
-  </body>
-  <script>
-{% include ui.js %}
-{% include functions.js %}
-{% include fake_testing.js %}  
+</div>
+</body>
+<script>
   // url for lioranboard
   let url = 'ws://127.0.0.1:9423';
   // if you make an extension and it connects to twitch, use this id
@@ -39,10 +36,14 @@
   let just_raided = [];
   LBDebugPost = (typeof LBDebugPost !== 'undefined') ? LBDebugPost : null
 
+{% include ui.js %}
+{% include twitch_triggers.js %}  
 {% include receiver.js %}
+{% include twitch_api.js %}
 {% include pubsub.js %}
 {% include twitch_chat.js %}
-  
+{% include functions.js %}
+
   /*
   START EXTENSION STUFF HERE
   Extension are a way to connect LioranBoard to other apps and services. 
@@ -56,7 +57,6 @@
   // for any other extension, the datatype will be what's in the extension box.
 
 {% include ext_hooks.js %}
-  
 {% include ext_scripts.js %}
 
   </script>

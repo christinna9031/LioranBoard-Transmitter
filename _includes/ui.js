@@ -157,6 +157,13 @@ function TSLTabs() {
   document.getElementById('extensions-tab-buttons').className = 'mt-2';
 }
 
+// change connection status UI
+function ConnectionStatus(id, status, text, fill) {
+  document.getElementById(id).className = `${status} d-none d-md-inline-flex`;
+  document.getElementById(id).innerHTML = ` ${text}`;
+  document.getElementById(`${id}_circle`).setAttribute('fill', fill);
+}
+
 // helper function to set multiple element attributes at once
 Element.prototype.setAttributes = function (obj) {
   for (const prop in obj) {

@@ -1,0 +1,56 @@
+<!--Get Version external-->
+<div class='row ml-5 pl-5'>
+    <style>
+       #version_output a{
+       color: #fb4848;
+       }
+       #version_output td{
+       padding:0px 10px;
+       }
+    </style>
+    <h5>Version</h5>
+    <table  class="table ms-2 table-responsive table-Dark table-striped w-auto align-middle" id='version_output'>
+       <thead>
+          <tr>
+             <th scope="col">Name</th>
+             <th scope="col">Latest</th>
+             <th scope="col">Current</th>
+             <th scope="col">Status</th>
+          </tr>
+       </thead>
+       <tbody>
+          <tr>
+             <th scope="row" id='versionOBS'></th>
+             <td id='obs_latestV'></td>
+             <td id='obs_currentV'></td>
+             <td id='obs_status'></td>
+          </tr>
+          <tr>
+             <th scope="row" id='versionOBSWS'></th>
+             <td id='obsws_latestV'></td>
+             <td id='obsws_currentV'></td>
+             <td id='obsws_status'></td>
+          </tr>
+          <tr>
+             <th scope="row" id='versionReceiver'></th>
+             <td id='receiver_latestV'></td>
+             <td id='receiver_currentV'></td>
+             <td id='receiver_status'></td>
+          </tr>
+          <tr>
+             <th scope="row" id='versionStreamDeck'></th>
+             <td id='streamdeck_latestV'></td>
+             <td id='streamdeck_currentV'></td>
+             <td id='streamdeck_status'></td>
+          </tr>
+          <tr>
+             <th scope="row" id='versionTransmitter'></th>
+             <td id='transmitter_latestV'></td>
+             <td id='transmitter_currentV'></td>
+             <td id='transmitter_status'></td>
+          </tr>
+       </tbody>
+    </table>
+ </div>
+ <div class='row pt-2'> <span><button onclick='LBGetVersion()'>Refresh</button> </span> </div>
+<!--Get Version external end-->
