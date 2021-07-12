@@ -4,6 +4,7 @@
 ## Changelog since 3.00 version
 - changed `window.onload = (event)` to `window.addEventListener('load', (event)` for loading UI
 - fixed a bug where Receiver would crash when sending fake chat trigger and adding it to queue
+- added Longhouse81's commit to get a variable or stack from LB without hook
 
 ## 3.00 version
 
