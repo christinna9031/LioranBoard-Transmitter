@@ -2,5 +2,5 @@
 .jekyll-cache
 .jekyll-metadata
 assets
-assets/favicon.ico
+_site/favicon.ico
 vendor
