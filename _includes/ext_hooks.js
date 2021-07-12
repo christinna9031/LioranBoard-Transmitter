@@ -2,7 +2,11 @@ function LBExtensionReceived() {
   switch (LioranBoardJSON.datatype) {
     // datatype you specified.
     default:
-      console.log(LioranBoardJSON, `Warning: Hook is missing. Extension ${LioranBoardJSON.datatype} seems to not be correctly installed.`);
+      if (requestKeys.has(LioranBoardJSON.datatype)) {
+        removeKey(LioranBoardJSON.datatype);
+      } else {
+        console.log(LioranBoardJSON, `Warning: Hook is missing. Extension ${LioranBoardJSON.datatype} seems to not be correctly installed.`);
+      };
       break;
 {% include ext_hooks/get_version.js %}
 {% include ext_hooks/message_logging.js %}
