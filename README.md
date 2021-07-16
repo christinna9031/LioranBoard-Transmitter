@@ -7,6 +7,8 @@
 - added Longhouse81's commit to get a variable or stack from LB without hook
 - added default title for channel points test redeems if none is inputed 
 - added favicon
+- fixed a bug where Twitch Sub Trigger check boxes were un-checkable
+- LioranBoardJSON is now not a global variable anymore and is instead fully processed in LBExtensionReceived for performance reasons
 
 ## 4.00 version
 
