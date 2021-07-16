@@ -38,10 +38,10 @@ function fakegiftamount() {
 
 // check/uncheck boxes if sub is anon, prime etc.
 function CheckUncheckSubGift(e) {
+  itier1.checked = ((e.id === 'isubgift' || e.id === 'ianongift') && iprime.checked) ? true : itier1.checked;
   iprime.checked = !((e.id === 'isubgift' || e.id === 'ianongift'));
-  itier1.checked = !!((e.id === 'isubgift' || e.id === 'ianongift'));
-  ianongift.checked = !((e.id === 'iprime' || e.id === 'isubgift'));
-  isubgift.checked = !((e.id === 'iprime' || e.id === 'ianongift'));
+  ianongift.checked = ((e.id === 'iprime' || e.id === 'isubgift')) ? false : ianongift.checked;
+  isubgift.checked = ((e.id === 'iprime' || e.id === 'ianongift')) ? false : isubgift.checked;
 }
 
 function forcenameoff() {

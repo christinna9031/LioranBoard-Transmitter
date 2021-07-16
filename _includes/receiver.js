@@ -63,8 +63,7 @@ function boardmessage(event) {
         break;
         // JSON string from LioranBoard
       case '3':
-        LioranBoardJSON = JSON.parse(str);
-        LBExtensionReceived();
+        LBExtensionReceived(str);
         if (LBDebugPost) LBDebugPost('receiver', event.data);
         break;
         // reload transmitter

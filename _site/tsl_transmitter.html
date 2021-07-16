@@ -697,10 +697,10 @@ function fakegiftamount() {
 
 // check/uncheck boxes if sub is anon, prime etc.
 function CheckUncheckSubGift(e) {
+  itier1.checked = ((e.id === 'isubgift' || e.id === 'ianongift') && iprime.checked) ? true : itier1.checked;
   iprime.checked = !((e.id === 'isubgift' || e.id === 'ianongift'));
-  itier1.checked = !!((e.id === 'isubgift' || e.id === 'ianongift'));
-  ianongift.checked = !((e.id === 'iprime' || e.id === 'isubgift'));
-  isubgift.checked = !((e.id === 'iprime' || e.id === 'ianongift'));
+  ianongift.checked = ((e.id === 'iprime' || e.id === 'isubgift')) ? false : ianongift.checked;
+  isubgift.checked = ((e.id === 'iprime' || e.id === 'ianongift')) ? false : isubgift.checked;
 }
 
 function forcenameoff() {
@@ -862,8 +862,7 @@ function boardmessage(event) {
         break;
         // JSON string from LioranBoard
       case '3':
-        LioranBoardJSON = JSON.parse(str);
-        LBExtensionReceived();
+        LBExtensionReceived(str);
         if (LBDebugPost) LBDebugPost('receiver', event.data);
         break;
         // reload transmitter
@@ -1453,7 +1452,13 @@ function LBStackDelete(name) {
   // In the JSON you can include any data you want if you use manual extension.
   // for any other extension, the datatype will be what's in the extension box.
 
-function LBExtensionReceived() {
+function LBExtensionReceived(str) {
+  let LioranBoardJSON;
+  try {
+    LioranBoardJSON = JSON.parse(str);
+  } catch(e) {
+    return console.log(e);
+  }
   switch (LioranBoardJSON.datatype) {
     // datatype you specified.
     default:

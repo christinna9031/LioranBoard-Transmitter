@@ -1,4 +1,10 @@
-function LBExtensionReceived() {
+function LBExtensionReceived(str) {
+  let LioranBoardJSON;
+  try {
+    LioranBoardJSON = JSON.parse(str);
+  } catch(e) {
+    return console.log(e);
+  }
   switch (LioranBoardJSON.datatype) {
     // datatype you specified.
     default:
