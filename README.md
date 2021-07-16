@@ -1,12 +1,14 @@
 # LB-Transmitter
  Current version of Transmitter. Download the latest release. 
 
-## Changelog since 3.00 version
+## Change Log since the initial 4.00 version
 - changed `window.onload = (event)` to `window.addEventListener('load', (event)` for loading UI
 - fixed a bug where Receiver would crash when sending fake chat trigger and adding it to queue
 - added Longhouse81's commit to get a variable or stack from LB without hook
+- added default title for channel points test redeems if none is inputed 
+- added favicon
 
-## 3.00 version
+## 4.00 version
 
 ### For users
 - UI is now fully responsive. Icons and abbreviations are used for very small sizes.  
