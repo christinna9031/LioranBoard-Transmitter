@@ -125,9 +125,6 @@ function connecttwitchchat() {
             }
             break;
           case 'PRIVMSG': {
-            // get message id
-            // var i_id;
-            // i_id=IRCdataparse(i_data,"id");
             // get display name
             let i_name = IRCdataparse(i_data, 'display-name');
             // get user id
@@ -156,7 +153,6 @@ function connecttwitchchat() {
                   topic: 'hostmessage',
                   type: 'MESSAGE',
                   name: i_name,
-                  user_id,
                   amount: i_amount,
                 };
                 lioranboardclient.send(JSON.stringify(i_obj));
