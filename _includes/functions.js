@@ -149,7 +149,7 @@ function LBGetValue(name, hook) {
 function LBTriggerExt(trigger, ...values) {
   const obj = { type: 'MESSAGE', topic: 'ExtensionTrigger', trigger };
   for (let i = 0; i < values.length; i += 1) {
-    obj[`value${i + 1}`] = values[i];
+    obj[`value${i + 1}`] = `${values[i]}`;
   }
   lioranboardclient.send(JSON.stringify(obj));
 }

@@ -5,3 +5,5 @@ assets
 _site/favicon.ico
 _site/README.md
 vendor
+_site/index.html
+index.html
