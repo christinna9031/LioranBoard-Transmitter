@@ -129,7 +129,7 @@ function LBPopUp(msg) {
 */
 function LBSetValue(name, value, real = false) {
   if (!real) value = `"${value}"`;
-  lioranboardclient.send(`{"type":"MESSAGE","topic":"SetValue","valuename":"${name}","value":${value}},"real":${real}}`);
+  lioranboardclient.send(`{"type":"MESSAGE","topic":"SetValue","valuename":"${name}","value":${value},"real":${real}}`);
 }
 
 /**
