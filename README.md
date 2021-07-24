@@ -9,6 +9,7 @@
 - added favicon
 - fixed a bug where Twitch Sub Trigger check boxes were un-checkable
 - LioranBoardJSON is now not a global variable anymore and is instead fully processed in LBExtensionReceived for performance reasons
+- LBTriggerExt helper function now sends all trigger values as strings, as Receiver expects them to be strings 
 
 ## 4.00 version
 
