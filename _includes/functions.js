@@ -90,7 +90,7 @@ function LBSendExtCommand(name, boxes) {
 async function fetchRequest(url, headers, body, method = 'GET') {
   const params = {};
   params.method = method;
-  params.headers = headers;
+  params.headers = headers || {};
   if (body) params.body = JSON.stringify(body);
   const response = await fetch(url, params);
   let content;
