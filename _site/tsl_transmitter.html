@@ -893,7 +893,8 @@ function apiconnect(api_request) {
     fetchRequest(url, headers)
       .then((res) => lioranboardclient.send(`tokeninfo:${JSON.stringify(res)}`))
       .catch((e) => LBAlert(`Twitch Oauth2 Validate Error: ${e}`));
-  }())(function getUserInfo() {
+  }());
+  (function getUserInfo() {
     const url = 'https://api.twitch.tv/helix/users';
     const headers = {
       Authorization: `Bearer ${api_request}`,
