@@ -16,7 +16,7 @@ function apiconnect(api_request) {
       Authorization: `Bearer ${api_request}`,
       'Client-ID': TWITCH_CLIENT_ID,
     };
-    fetchRequest(url, headers, null, 'PUT')
+    fetchRequest(url, headers)
       .then((res) => lioranboardclient.send(`userinfo:${JSON.stringify(res)}`))
       .catch((e) => LBAlert(`Twitch Getting User Info Error: ${e}`));
   }());
